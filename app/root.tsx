@@ -3,12 +3,16 @@ import {
   Links,
   Meta,
   Outlet,
+  useLoaderData,
   Scripts,
   ScrollRestoration,
 } from "react-router";
 
+import routes from "./routes";
+
 import type { Route } from "./+types/root";
 import "./app.css";
+import Sidebar from "./components/Sidebar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -22,8 +26,31 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+// introduction/functions => ["introduction", "functions"]
+export async function loader() {
+  const categories: Category = {};
+  let currentElement = categories;
+
+  const sanitizedRouteEntries = (await routes)
+    .filter((entry) => entry.path)
+    .sort((entry1, entry2) => entry1.path!.length - entry2.path!.length);
+
+  console.log(sanitizedRouteEntries);
+
+  sanitizedRouteEntries.forEach((routeEntry) => {
+    routeEntry.path?.split("/").forEach((section) => {
+      currentElement[section] ??= { path: routeEntry.path!, subcategory: {} };
+      currentElement = currentElement[section].subcategory;
+    });
+    currentElement = categories;
+  });
+
+  return categories;
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const categories = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>
@@ -33,6 +60,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <aside>
+          <Sidebar categories={categories} />
+        </aside>
         {children}
         <ScrollRestoration />
         <Scripts />
