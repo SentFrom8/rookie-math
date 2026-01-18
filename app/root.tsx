@@ -25,6 +25,10 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  {
+    rel: "stylesheet",
+    href: "https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css",
+  },
 ];
 // introduction/functions => ["introduction", "functions"]
 export async function loader() {
@@ -34,8 +38,6 @@ export async function loader() {
   const sanitizedRouteEntries = (await routes)
     .filter((entry) => entry.path)
     .sort((entry1, entry2) => entry1.path!.length - entry2.path!.length);
-
-  console.log(sanitizedRouteEntries);
 
   sanitizedRouteEntries.forEach((routeEntry) => {
     routeEntry.path?.split("/").forEach((section) => {

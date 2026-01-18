@@ -6,7 +6,6 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ categories, prefix }: SidebarProps) => {
-  console.log(categories);
   return (
     <ul>
       {Object.entries(categories).map(([section, { path, subcategory }], i) => {
