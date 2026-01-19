@@ -4,7 +4,7 @@ import katex from "katex";
 const renderBlock = (
   latex: string,
   container: HTMLElement,
-  displayMode: boolean = true
+  displayMode: boolean = true,
 ) => {
   try {
     katex.render(latex, container, {
@@ -21,7 +21,7 @@ const LatexRenderer = ({
   displayMode = true,
 }: {
   latex: string;
-  displayMode: boolean;
+  displayMode?: boolean;
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -35,9 +35,6 @@ const LatexRenderer = ({
       containerRef.current.innerHTML = ""; // clear previous
 
       blocks.forEach((block) => {
-        const el = document.createElement("div");
-        containerRef.current!.appendChild(el);
-
         const isMathBlock =
           block.startsWith("\\[") ||
           block.startsWith("\\(") ||
@@ -45,6 +42,14 @@ const LatexRenderer = ({
           block.includes("&=") ||
           block.includes("^") ||
           displayMode;
+
+        const el = isMathBlock
+          ? document.createElement("div")
+          : document.createElement("span");
+
+        el.className = "Test";
+
+        containerRef.current!.appendChild(el);
 
         const cleanBlock = block.replace(/^\\\[|\\\]$/g, "");
         renderBlock(cleanBlock, el, isMathBlock);
