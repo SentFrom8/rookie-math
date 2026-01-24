@@ -9,12 +9,14 @@ const Sidebar = ({ categories, prefix }: SidebarProps) => {
   return (
     <ul>
       {Object.entries(categories).map(([section, { path, subcategory }], i) => {
+        const combinedPrefix = `${prefix ? prefix + "." : ""}${i + 1}`;
         return (
-          <li className={`pl-3`}>
-            <Link to={path}>
-              {`${prefix ? prefix + "." : ""}${i + 1}. ${section}`}
-            </Link>
-            <Sidebar categories={subcategory} prefix={`${i + 1}`} />
+          <li className={`pl-3`} key={path}>
+            <Link
+              to={
+                path
+              }>{`${combinedPrefix}. ${section.replace("-", " ")}`}</Link>
+            <Sidebar categories={subcategory} prefix={combinedPrefix} />
           </li>
         );
       })}
