@@ -267,6 +267,126 @@ const BinaryRelations = () => {
         If we were to draw a horizontal line through (a, b) in the grid, and a
         vertical one through (b, c), there must be 1 on the intersection.
       </p>
+      <h2>Important relations</h2>
+      <h3>Equivalence relations</h3>
+      <p>
+        These relations are reflexive, symmetric and transitive. This is
+        basically a relation that contains pairs of elements considered equal.
+        Reflexivity is self explanatory here because an element and that same
+        element are, in fact, the same. It has to be symmetric because if a = b,
+        then they are the same so b = a must also be true. It's transitive
+        because a = b = c means these are all the same so a = c has to be true.
+        Of curse, when I say they are the same I mean they are considered equal.
+      </p>
+      <p>
+        An equivalence relation breaks up the set into classes. These classes
+        are just sets where the elements are considered equal under the
+        relation. So if we had a relation where two elements are related if they
+        have the same reminder when divided by three, this relation would break
+        the set up into 3 classes. One for element that have a remainder of 0,
+        one for the elements that have a remainder of 1 and one for elements
+        that have a remainder 2. We'd write this relation as:
+      </p>
+      <CustomLatex
+        latex={
+          "(\\forall a, b \\in \\N) \\space a \\rho b \\iff a \\equiv b \\space (\\text\{mod 3\})"
+        }
+      />
+      <p>And the classes would look like:</p>
+      <CustomLatex
+        latex={
+          "[0] = \\{0, 3, 6, 9, \\dots \\} \\qquad [1] = \\{1, 4, 7, 10, \\dots \\} \\qquad [2] = \\{2, 5, 8, 11, \\dots \\}"
+        }
+      />
+      <p>
+        [0] This notation is used to represent a class, and it means this is a
+        set of all elements related to the element 0 (in this instance that
+        would be all the elements with the same remainder after dividing by 3).
+        The number inside the bracket is called the representative, and it can
+        be any element of the class. So [0] = [3] = [6] and so on. One important
+        point is that two different classes are disjoint, so&nbsp;
+        <CustomLatex latex={"[0] \\bigcup [1] = \\emptyset"} block={false} />
+      </p>
+      <h2>Partial order relations</h2>
+      <p>
+        Are relations that are reflexive, transitive and antisymmetric. We can
+        think of them as relations where elements can be ordered in some way but
+        also equal. One example is the classic less than or equal relation (≤).
+        The equality here requires reflexivity. They are antisymmetric because
+        they define some kind of order, so if a is before b (a, b) then b can't
+        be before a (b, a). They are transitive because if a before b and b
+        before c, a obviously has to be before c. I use the word 'before'
+        because these relations don't require any sort of rule or logic. I could
+        have a partial order where 5 ≤ 3. I could also have an equivalence
+        relation where 5 = 3. The only thing that matters for these to be valid
+        is that they satisfy the properties of their respective relation type.
+        In fact, let's make a partial order relation using our previous set A.
+      </p>
+      <table>
+        <tr>
+          <th>A</th>
+          <th>a</th>
+          <th>b</th>
+          <th>c</th>
+          <th>d</th>
+          <th>e</th>
+        </tr>
+        <tr>
+          <th>a</th>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>b</th>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>c</th>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>d</th>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>e</th>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+      </table>
+      <p>Our relation looks like this:</p>
+      <CustomLatex
+        latex={
+          "\\rho = \\{\\text\{(a, a), (b, b), (b, c), (c, c), (d, b), (d, c), (d, d), (e, b), (e, c), (e, e)\}\\}"
+        }
+      />
+      <p>
+        As we can see, I'm not following any rule or using any logic to define
+        this, I just picked random values and made sure the properties are
+        satisfied. There are elements which are not related which we label as
+        incomparable. For example, there is no order defined between the element
+        a and c. If all elements are comparable this is called a total order.
+        The ordered pair containing the set and the relation (A, ρ) is called a
+        poset.
+      </p>
     </main>
   );
 };
