@@ -2,8 +2,7 @@ import CustomLatex from "~/components/CustomLatex";
 
 const BinaryRelations = () => {
   return (
-    <main>
-      <h1>Binary relations</h1>
+    <>
       <p>
         Binary relations are ones that are the subset of the cartesian product
         of a set by itself.&nbsp;
@@ -387,7 +386,7 @@ const BinaryRelations = () => {
         The ordered pair containing the set and the relation (A, ρ) is called a
         poset.
       </p>
-    </main>
+    </>
   );
 };
 

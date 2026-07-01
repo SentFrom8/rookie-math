@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+:root {
+    --background-color-light: #F5F0E8;
+    --menu-color-light: #EDE7D9;
+    --border-color-light: #C8BC9E;
+    --grid-lines-light: #b4a06e40;
+    --soft-text-light: #6B5C3E;
+
+    --inline-padding-mobile: 1em;
+
+}
+
+body {
+    background-color: var(--background-color-light);
+    background-size: 20px 20px;
+    background-image:
+      linear-gradient(to right, var(--grid-lines-light) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-lines-light) 1px, transparent 1px);
+}

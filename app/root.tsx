@@ -12,7 +12,13 @@ import routes from "./routes";
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import Sidebar from "./components/Sidebar";
+import { useState } from "react";
+import { Link } from "react-router";
+import ContentTree from "./components/ContentTree";
+import NavBar from "./components/NavBar"
+import SideBar from "./components/SideBar";
+import BottomNav from "./components/BottomNav"
+import type { Categories } from "./utils/types"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,28 +36,35 @@ export const links: Route.LinksFunction = () => [
     href: "https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css",
   },
 ];
-// introduction/functions => ["introduction", "functions"]
+
 export async function loader() {
-  const categories: Category = {};
+  const categories: Categories = {};
   let currentElement = categories;
 
-  const sanitizedRouteEntries = (await routes)
-    .filter((entry) => entry.path)
-    .sort((entry1, entry2) => entry1.path!.length - entry2.path!.length);
+  const sanitizedRouteEntries = (await routes).filter((entry) => entry.path);
+  console.log(sanitizedRouteEntries)
 
   sanitizedRouteEntries.forEach((routeEntry) => {
-    routeEntry.path?.split("/").forEach((section) => {
-      currentElement[section] ??= { path: routeEntry.path!, subcategory: {} };
-      currentElement = currentElement[section].subcategory;
+      const sections = routeEntry.path.split("/")
+      sections.forEach((section, i) => {
+      currentElement[section] ??= { path: "", subcategories: {} };
+        if (i === sections.length - 1){
+            //console.log(routeEntry.path)
+            currentElement[section].path = routeEntry.path
+        }
+      currentElement = currentElement[section].subcategories;
+
     });
     currentElement = categories;
   });
 
+  //console.log(categories)
   return categories;
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const categories = useLoaderData<typeof loader>();
+  const [sidebarOpen, setContentTreeOpen] = useState(false);
 
   return (
     <html lang="en">
@@ -61,11 +74,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        <aside>
-          <Sidebar categories={categories} />
-        </aside>
-        {children}
+      <body className="h-svh flex flex-col">
+        <header className="sticky top-0 z-100 relative">
+          <NavBar menuAction={ (_) => {setContentTreeOpen(!sidebarOpen)} }/>
+        </header>
+        <main className="h-full overflow-hidden relative flex flex-col">
+          <div className="overflow-scroll px-(--inline-padding-mobile) py-[1em] flex-1 flex-col gap-6">
+            {children}
+          </div>
+          <SideBar sidebarOpen={sidebarOpen} >
+            <Link to={"/"} className="w-full inline-block pl-(--inline-padding-mobile) py-2 border-b-1 border-(--border-color-light)">About the project</Link>
+            <ContentTree categories={categories} />
+          </SideBar>
+          <footer>
+            <BottomNav categories={categories}/>
+          </footer>
+        </main>
         <ScrollRestoration />
         <Scripts />
       </body>

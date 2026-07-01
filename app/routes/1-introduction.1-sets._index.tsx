@@ -3,8 +3,8 @@ import CustomLatex from "~/components/CustomLatex";
 
 const Sets = () => {
   return (
-    <main>
-      <h1>Sets</h1>
+      <>
+      <h2>Sets</h2>
       <p>
         Sets are just collections of unique values. They can contain any number
         of elements from zero to infinity. They can't have a negative number of
@@ -83,7 +83,7 @@ const Sets = () => {
         transition us into the axiomatic set theory, and maybe later we'll cover
         the modern, standard form called the Zermelo-Fraenkel set theory.
       </p>
-    </main>
+    </>
   );
 };
 

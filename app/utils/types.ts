@@ -1,3 +1,4 @@
-type Category = {
-  [name: string]: { path: string; subcategory: Category };
+export type Categories = {
+  [name: string]: { path: string; subcategories: Categories };
 };
+

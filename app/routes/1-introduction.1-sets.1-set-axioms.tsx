@@ -2,7 +2,7 @@ import CustomLatex from "~/components/CustomLatex";
 
 const SetAxioms = () => {
   return (
-    <main>
+    <>
       Let's define sets.
       <ol>
         <li>
@@ -168,7 +168,7 @@ const SetAxioms = () => {
         <CustomLatex latex={"X = \\{X\\}"} block={false} /> can't be constructed
         under these axioms. They don't allow such a structure to exist.
       </p>
-    </main>
+    </>
   );
 };
 

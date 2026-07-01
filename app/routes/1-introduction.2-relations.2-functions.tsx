@@ -2,7 +2,7 @@ import CustomLatex from "~/components/CustomLatex";
 
 const Functions = () => {
   return (
-    <main>
+    <>
       <p>
         We can define a function as an ordered triple of 3 sets (A, B, f) where
         A and B are not empty sets, and f is a relation that is a subset
@@ -147,7 +147,7 @@ const Functions = () => {
         multiple elements from C. So we can safely conclude that the composition
         of two functions will always itself be a function.
       </p>
-    </main>
+    </>
   );
 };
 

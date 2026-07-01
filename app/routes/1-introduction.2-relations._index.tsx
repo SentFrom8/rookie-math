@@ -3,7 +3,7 @@ import CustomLatex from "~/components/CustomLatex";
 
 const Relations = () => {
   return (
-    <main>
+    <>
       <h1>Relations</h1>
       <p>
         To understand relations, we need to understand what a pair, or an
@@ -69,7 +69,7 @@ const Relations = () => {
       </table>
       <CustomLatex
         latex={
-          "A = \\{1, 2, 3\\} \\qquad B = \\{a, b, c\\} \\qquad A \\times B = \\{(1, a), (1, b), (1, c), (2, a), (2, b), (2, c), (3, a), (3, b), (3, c)\\}"
+          "A = \\{1, 2, 3\\} \\qquad B = \\{a, b, c\\} \\newline \\qquad A \\times B = \\{(1, a), (1, b), (1, c), \\newline (2, a), (2, b), (2, c), \\newline (3, a), (3, b), (3, c)\\}"
         }
       />
       <p>
@@ -85,7 +85,7 @@ const Relations = () => {
         </Link>
         .
       </p>
-    </main>
+    </>
   );
 };
 
