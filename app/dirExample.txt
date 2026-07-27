@@ -1,0 +1,123 @@
+{
+  "files": [
+    {
+      "name": "index.tsx",
+      "path": "index.tsx"
+    }
+  ],
+  "directories": {
+    "pages": {
+      "files": [],
+      "directories": {
+        "1-introduction": {
+          "files": [
+            {
+              "name": "index.tsx",
+              "path": "pages/1-introduction/index.tsx"
+            }
+          ],
+          "directories": {
+            "1-sets": {
+              "files": [
+                {
+                  "name": "1-set-axioms.tsx",
+                  "path": "pages/1-introduction/1-sets/1-set-axioms.tsx"
+                },
+                {
+                  "name": "2-set-operations.tsx",
+                  "path": "pages/1-introduction/1-sets/2-set-operations.tsx"
+                },
+                {
+                  "name": "index.tsx",
+                  "path": "pages/1-introduction/1-sets/index.tsx"
+                }
+              ],
+              "directories": {}
+            },
+            "2-relations": {
+              "files": [
+                {
+                  "name": "1-binary-relations.tsx",
+                  "path": "pages/1-introduction/2-relations/1-binary-relations.tsx"
+                },
+                {
+                  "name": "2-functions.tsx",
+                  "path": "pages/1-introduction/2-relations/2-functions.tsx"
+                },
+                {
+                  "name": "index.tsx",
+                  "path": "pages/1-introduction/2-relations/index.tsx"
+                }
+              ],
+              "directories": {}
+            }
+          }
+        },
+        "2-geometry": {
+          "files": [
+            {
+              "name": "index.tsx",
+              "path": "pages/2-geometry/index.tsx"
+            }
+          ],
+          "directories": {
+            "1-vectors": {
+              "files": [
+                {
+                  "name": "index.tsx",
+                  "path": "pages/2-geometry/1-vectors/index.tsx"
+                }
+              ],
+              "directories": {}
+            }
+          }
+        },
+        "old": {
+          "files": [
+            {
+              "name": "1-introduction.1-sets.1-set-axioms.tsx",
+              "path": "pages/old/1-introduction.1-sets.1-set-axioms.tsx"
+            },
+            {
+              "name": "1-introduction.1-sets.2-set-operations.tsx",
+              "path": "pages/old/1-introduction.1-sets.2-set-operations.tsx"
+            },
+            {
+              "name": "1-introduction.1-sets._index.tsx",
+              "path": "pages/old/1-introduction.1-sets._index.tsx"
+            },
+            {
+              "name": "1-introduction.2-relations.1-binary-relations.tsx",
+              "path": "pages/old/1-introduction.2-relations.1-binary-relations.tsx"
+            },
+            {
+              "name": "1-introduction.2-relations.2-functions.tsx",
+              "path": "pages/old/1-introduction.2-relations.2-functions.tsx"
+            },
+            {
+              "name": "1-introduction.2-relations._index.tsx",
+              "path": "pages/old/1-introduction.2-relations._index.tsx"
+            },
+            {
+              "name": "1-introduction._index.tsx",
+              "path": "pages/old/1-introduction._index.tsx"
+            },
+            {
+              "name": "2-geometry.1-vectors._index.tsx",
+              "path": "pages/old/2-geometry.1-vectors._index.tsx"
+            },
+            {
+              "name": "2-geometry._index.tsx",
+              "path": "pages/old/2-geometry._index.tsx"
+            },
+            {
+              "name": "_index.tsx",
+              "path": "pages/old/_index.tsx"
+            }
+          ],
+          "directories": {}
+        }
+      }
+    }
+  }
+}

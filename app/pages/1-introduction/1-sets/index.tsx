@@ -33,8 +33,7 @@ const Sets = () => {
         have also listed each element, like so:
       </p>
       <CustomLatex latex={"A = \\{ 2,3,4,5,6,7,8,9,10 \\}"} />
-      <p>
-        Here are some of the signature sets:
+        <span>Here are some of the signature sets:</span>
         <ul>
           <li>
             Natural numbers: <CustomLatex latex={"\\N"} block={false} />
@@ -52,7 +51,6 @@ const Sets = () => {
             Complex numbers: <CustomLatex latex={"\\Complex"} block={false} />
           </li>
         </ul>
-      </p>
 
       <p>
         A set can contain anything. For example, a set of all original thoughts

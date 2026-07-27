@@ -40,7 +40,8 @@ const Relations = () => {
         and we can see how it works in the table below:
       </p>
       <table>
-        <tr>
+      <thead>
+         <tr>
           <th>
             <CustomLatex latex={"A \\times B"} block={false} />
           </th>
@@ -48,7 +49,11 @@ const Relations = () => {
           <th>2</th>
           <th>3</th>
         </tr>
-        <tr>
+ 
+      </thead>
+      
+      <tbody>
+         <tr>
           <th>a</th>
           <td>(1, a)</td>
           <td>(2, a)</td>
@@ -66,6 +71,8 @@ const Relations = () => {
           <td>(2, c)</td>
           <td>(3, c)</td>
         </tr>
+ 
+      </tbody>
       </table>
       <CustomLatex
         latex={

@@ -15,54 +15,59 @@ const BinaryRelations = () => {
         easily using a table, like so:
       </p>
       <table>
-        <tr>
-          <th>A</th>
-          <th>a</th>
-          <th>b</th>
-          <th>c</th>
-          <th>d</th>
-          <th>e</th>
-        </tr>
-        <tr>
-          <th>a</th>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>b</th>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>c</th>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>d</th>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>e</th>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-        </tr>
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>a</th>
+              <th>b</th>
+              <th>c</th>
+              <th>d</th>
+              <th>e</th>
+            </tr>
+          </thead>
+         
+          <tbody>
+             <tr>
+              <th>a</th>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>b</th>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>c</th>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>d</th>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>e</th>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+            </tr>
+          </tbody>
       </table>
       <p>
         The table represents each combination of 2 elements from A. 1 means that
@@ -134,7 +139,8 @@ const BinaryRelations = () => {
       <CustomLatex latex={"(a, b) \\in \\rho \\implies (b, a) \\in \\rho"} />
       <p>Here is an example of one such relation:</p>
       <table>
-        <tr>
+      <thead>
+         <tr>
           <th>A</th>
           <th>a</th>
           <th>b</th>
@@ -142,7 +148,10 @@ const BinaryRelations = () => {
           <th>d</th>
           <th>e</th>
         </tr>
-        <tr>
+      </thead>
+
+      <tbody>
+         <tr>
           <th>a</th>
           <td>1</td>
           <td>0</td>
@@ -182,6 +191,8 @@ const BinaryRelations = () => {
           <td>0</td>
           <td>1</td>
         </tr>
+ 
+      </tbody>
       </table>
       <p>
         We can clearly see why it's called symmetry, if we were to fold this
@@ -213,7 +224,8 @@ const BinaryRelations = () => {
       />
       <p>Let's try to see this in the table:</p>
       <table>
-        <tr>
+      <thead>
+         <tr>
           <th>A</th>
           <th>a</th>
           <th>b</th>
@@ -221,7 +233,10 @@ const BinaryRelations = () => {
           <th>d</th>
           <th>e</th>
         </tr>
-        <tr>
+      </thead>
+
+      <tbody>
+         <tr>
           <th>a</th>
           <td>0</td>
           <td>0</td>
@@ -261,6 +276,8 @@ const BinaryRelations = () => {
           <td>0</td>
           <td>0</td>
         </tr>
+ 
+      </tbody>
       </table>
       <p>
         If we were to draw a horizontal line through (a, b) in the grid, and a
@@ -322,7 +339,8 @@ const BinaryRelations = () => {
         In fact, let's make a partial order relation using our previous set A.
       </p>
       <table>
-        <tr>
+      <thead>
+         <tr>
           <th>A</th>
           <th>a</th>
           <th>b</th>
@@ -330,7 +348,11 @@ const BinaryRelations = () => {
           <th>d</th>
           <th>e</th>
         </tr>
-        <tr>
+ 
+      </thead>
+
+      <tbody>
+         <tr>
           <th>a</th>
           <td>1</td>
           <td>0</td>
@@ -370,7 +392,9 @@ const BinaryRelations = () => {
           <td>0</td>
           <td>1</td>
         </tr>
-      </table>
+ 
+      </tbody>
+              </table>
       <p>Our relation looks like this:</p>
       <CustomLatex
         latex={

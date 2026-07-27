@@ -3,12 +3,9 @@ import {
   Links,
   Meta,
   Outlet,
-  useLoaderData,
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
-import routes from "./routes";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -18,7 +15,7 @@ import ContentTree from "./components/ContentTree";
 import NavBar from "./components/NavBar"
 import SideBar from "./components/SideBar";
 import BottomNav from "./components/BottomNav"
-import type { Categories } from "./utils/types"
+import { RouteTree } from "./utils/globals";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -37,33 +34,7 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-export async function loader() {
-  const categories: Categories = {};
-  let currentElement = categories;
-
-  const sanitizedRouteEntries = (await routes).filter((entry) => entry.path);
-  console.log(sanitizedRouteEntries)
-
-  sanitizedRouteEntries.forEach((routeEntry) => {
-      const sections = routeEntry.path.split("/")
-      sections.forEach((section, i) => {
-      currentElement[section] ??= { path: "", subcategories: {} };
-        if (i === sections.length - 1){
-            //console.log(routeEntry.path)
-            currentElement[section].path = routeEntry.path
-        }
-      currentElement = currentElement[section].subcategories;
-
-    });
-    currentElement = categories;
-  });
-
-  //console.log(categories)
-  return categories;
-}
-
 export function Layout({ children }: { children: React.ReactNode }) {
-  const categories = useLoaderData<typeof loader>();
   const [sidebarOpen, setContentTreeOpen] = useState(false);
 
   return (
@@ -84,10 +55,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <SideBar sidebarOpen={sidebarOpen} >
             <Link to={"/"} className="w-full inline-block pl-(--inline-padding-mobile) py-2 border-b-1 border-(--border-color-light)">About the project</Link>
-            <ContentTree categories={categories} />
+            <ContentTree dir={RouteTree.directories["pages"] ?? {}} emphasize />
           </SideBar>
           <footer>
-            <BottomNav categories={categories}/>
+            <BottomNav categories={{}} />
           </footer>
         </main>
         <ScrollRestoration />

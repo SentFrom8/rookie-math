@@ -1,4 +1,3 @@
-import { type RouteConfig } from "@react-router/dev/routes";
-import { flatRoutes } from "@react-router/fs-routes";
+import { Config } from "./utils/globals";
 
-export default flatRoutes() satisfies RouteConfig;
+export default Config
