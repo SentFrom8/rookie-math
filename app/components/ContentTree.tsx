@@ -1,41 +1,29 @@
+import { useLocation } from "react-router";
 import { Link } from "react-router";
-import { type Categories, type Directory } from "~/utils/types";
+import type { Directory } from "~/utils/types";
 
-//const ContentTree = ({ categories, prefix }: ContentTreeProps) => {
-//    let tree = RouteTree.directories["pages"]
-//    let currentDir = tree
-//
-//
-//
-//  return <ul> 
-//      {Object.entries(categories)
-//             .sort(([key1], [key2]) => key1.localeCompare(key2))
-//             .map(([section, { path, subcategories }]) => {
-//        const combinedPrefix = `${prefix ? prefix + "." : ""}${section[0]}`;
-//        return <li className={`pt-1 pl-(--inline-padding-mobile) ${prefix ? "font-normal" : "font-semibold"} whitespace-pre-wrap`} key={path}>
-//            <Link className="capitalize"
-//              to={ path }>{`${combinedPrefix}   ${section.substring(2).replace('-', ' ')}`}</Link>
-//            <ContentTree categories={subcategories} prefix={combinedPrefix} />
-//          </li>
-//      })}
-//    </ul>
-//};
+const ContentTree = ({ dir, indentLevel = 0 }: { dir: Directory, indentLevel?: number, }) => {
+    let location = useLocation()
+    const sectionNum = (dir.fsPath.match(/\d+(?=-)/g) ?? []).join(".")
+    const parsedName = dir.name.split("-").slice(1).join(" ")
 
-const ContentTree = ({ dir, emphasize }: { dir: Directory, emphasize?: boolean }) => {
-    return <ul>
-        {dir.files.map(file => {
-            if (!file.name.includes("index.tsx")) 
-                return <li className="pl-(--inline-padding-mobile) pt-1 capitalize" key={file.path}><Link to={file.path.slice(0, -4)}>{file.name.slice(0, -4).replaceAll("-", " ")}</Link></li>
+    const jsx = <>
+    {indentLevel ? <li className="pt-1 capitalize">
+            {dir.index ? <Link style={{paddingLeft: `${indentLevel}em`}} className={dir.index.route === location.pathname ? "border-b-1" : ""} to={dir.index.route}>{`${sectionNum} ${parsedName}`}</Link> : `${sectionNum} ${parsedName}`}
+        </li> : null}
+        {dir.children.map(node => {
+            switch (node.type){
+                case "File":
+                    const sectionNum = (node.route.match(/\d+(?=-)/g) ?? []).join(".")
+                    const parsedName = node.name.split("-").slice(1).join(" ")
+                    return <li key={node.fsPath}  className="pt-1 capitalize"><Link style={{paddingLeft: `${indentLevel + 1}em`}} className={node.route === location.pathname ? "border-b-1" : ""} to={node.route}>{`${sectionNum} ${parsedName}`}</Link></li>
+                case "Directory":
+                    return <ContentTree key={node.fsPath} dir={node} indentLevel={indentLevel + 1} />
+            }
         })}
-        {Object.entries(dir.directories).map(([key, value]) => {
-            key = key.replace("-", " ")
-            let index = value.files.find(file => file.name.includes("index.tsx"))
-        return <li key={key} className="pl-(--inline-padding-mobile) pt-1 capitalize">
-            {index ? <Link className={emphasize ? `font-semibold` : ""} to={index.path.replace("index.tsx", "")}>{key}</Link> : <p>{key}</p>}
-                <ContentTree dir={value} />
-            </li>
-        })}
-    </ul>
+    </>
+
+    return indentLevel ? jsx : <ul>{jsx}</ul>
 }
 
 export default ContentTree;

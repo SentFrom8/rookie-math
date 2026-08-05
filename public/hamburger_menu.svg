@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="58.533611mm"
+   height="38.35693mm"
+   viewBox="0 0 58.533611 38.35693"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="hamburger_menu.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0973349"
+     inkscape:cx="111.17846"
+     inkscape:cy="194.5623"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="1920"
+     inkscape:window-y="1080"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-59.81423,-32.82211)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.32292"
+       d="m 59.81423,33.48357 h 58.53361"
+       id="path398" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.32292"
+       d="M 59.814231,52.000574 H 118.34784"
+       id="path398-3" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.32292"
+       d="m 59.81423,70.517578 h 58.53361"
+       id="path398-3-6" />
+  </g>
+</svg>

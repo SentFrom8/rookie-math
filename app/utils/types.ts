@@ -1,14 +1,22 @@
-export type Categories = {
-  [name: string]: { path: string; subcategories: Categories };
-};
-
 export type File = {
-    name: string;
-    path: string;
+    type: "File"
+    name: string
+    extension: string
+    fsPath: string
+    route: string
 }
 
 export type Directory = {
-    files: File[]
-    directories: { [name: string]: Directory }
+    type: "Directory"
+    name: string
+    fsPath: string
+    index?: File
+    children: FSNode[]
 }
 
+export type FSNode = File | Directory
+
+export type PageSummary = {
+    name: string
+    route: string
+}

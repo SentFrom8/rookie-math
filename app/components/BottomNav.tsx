@@ -3,26 +3,38 @@ import { Link } from "react-router"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import { RouteList } from "~/utils/globals"
+import { RouteTree } from "~/utils/globals"
+import { pageSummaryGenerator } from "~/utils/functions"
+import type { Directory } from "~/utils/types"
+
+
 
 const BottomNav = () => {
     let location = useLocation();
+    if (!location.pathname.startsWith("/pages/")) return null
 
-    const sortedRoutes = [...RouteList].sort()
-    const currentIndex = sortedRoutes.findIndex(file => file === location.pathname.slice(1))
-    const prev = currentIndex > 0 ? sortedRoutes[currentIndex - 1] : undefined
-    const next = currentIndex < sortedRoutes.length - 1 ? sortedRoutes[currentIndex + 1] : undefined
+    const pages = RouteTree.children.find(node => node.type === "Directory" && node.name === "pages") as Directory | undefined
+    if (!pages) return null
 
-    return <div className="bg-(--menu-color-light) flex items-center justify-evenly py-4 border-t-2 border-(--border-color-light) text-(--soft-text-light)">
+    const summaries = [...pageSummaryGenerator(pages)]
+    const index = summaries.findIndex(summary => summary.route === location.pathname)
+
+    if (index === -1) return null
+
+    const prev = summaries[index - 1]
+    const next = summaries[index + 1]
+
+
+    return <div className="bg-(--menu-color-light) flex items-center justify-evenly py-4 border-t-2 border-(--border-color-light) text-(--soft-text-light)">    
         <div className="w-9/20">
-            {prev !== undefined && <Link className="w-full py-1 flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={prev}>
+            {prev && <Link className="w-full py-1 flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={prev.route}>
                 <FontAwesomeIcon className="text-xs" icon={faArrowLeft} />
-                {prev.split("/").filter(segment => segment).at(-1)?.split("-").slice(1).join(" ") ?? "Home"}
+                {prev.name}
             </Link>}
         </div>
         <div className="w-9/20">
-            {next !== undefined && <Link className="w-full py-1 flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={next}>
-                {next.split("/").filter(segment => segment).at(-1)?.split("-").slice(1).join(" ")}
+            {next && <Link className="w-full py-1 flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={next.route}>
+                {next.name}
                 <FontAwesomeIcon className="text-xs" icon={faArrowRight} />
             </Link>}
         </div>
