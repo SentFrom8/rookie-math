@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "deploy": "git fetch origin && git checkout pages && git rebase origin/main && git push --force-with-lease origin main",
+    "deploy": "git fetch origin && git checkout pages && git rebase origin/main && git push --force-with-lease origin pages",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
