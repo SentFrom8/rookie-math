@@ -9,14 +9,16 @@ const ContentTree = ({ dir, indentLevel = 0 }: { dir: Directory, indentLevel?: n
 
     const jsx = <>
     {indentLevel ? <li className="pt-1 capitalize">
-            {dir.index ? <Link style={{paddingLeft: `${indentLevel}em`}} className={dir.index.route === location.pathname ? "border-b-1" : ""} to={dir.index.route}>{`${sectionNum} ${parsedName}`}</Link> : `${sectionNum} ${parsedName}`}
+            {dir.index ? <Link style={{paddingLeft: `${indentLevel}em`}} className={dir.index.route === location.pathname ? "relative styled-border" : ""} to={dir.index.route}>{`${sectionNum} ${parsedName}`}</Link> : `${sectionNum} ${parsedName}`}
         </li> : null}
         {dir.children.map(node => {
             switch (node.type){
                 case "File":
                     const sectionNum = (node.route.match(/\d+(?=-)/g) ?? []).join(".")
                     const parsedName = node.name.split("-").slice(1).join(" ")
-                    return <li key={node.fsPath}  className="pt-1 capitalize"><Link style={{paddingLeft: `${indentLevel + 1}em`}} className={node.route === location.pathname ? "border-b-1" : ""} to={node.route}>{`${sectionNum} ${parsedName}`}</Link></li>
+                    return <li key={node.fsPath}  className="pt-1 capitalize">
+                        <Link style={{paddingLeft: `${indentLevel + 1}em`}} className={node.route === location.pathname ? "relative styled-border" : ""} to={node.route}>{`${sectionNum} ${parsedName}`}</Link>
+                    </li>
                 case "Directory":
                     return <ContentTree key={node.fsPath} dir={node} indentLevel={indentLevel + 1} />
             }

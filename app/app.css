@@ -18,3 +18,13 @@ body {
       linear-gradient(to right, var(--grid-lines-light) 1px, transparent 1px),
       linear-gradient(to bottom, var(--grid-lines-light) 1px, transparent 1px);
 }
+
+.styled-border::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% + 1em);
+    height: 2px;
+    background-color: black;
+}
