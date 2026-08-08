@@ -24,7 +24,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    width: calc(100% + 1em);
-    height: 2px;
-    background-color: black;
+    width: calc(100% + 1.3em);
+    height: 1px;
+    background-color: var(--border-color-light);
 }
