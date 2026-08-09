@@ -3,20 +3,20 @@ import CustomLatex from "~/components/CustomLatex";
 
 const Relations = () => {
   return (
-    <>
+    <div className="page flex flex-col gap-4 py-3">
       <h1>Relations</h1>
       <p>
         To understand relations, we need to understand what a pair, or an
         n-tuple is. Let's start with the definition:
       </p>
-      <CustomLatex latex={"(a, b) := \\{\\{a\\}, \\{a, b\\}\\}"} />
+      <CustomLatex latex={"\\large (a, b) := \\{\\{a\\}, \\{a, b\\}\\}"} />
       <p>
         Obviously, a set is unordered. We can't specify which element goes
         first. So we define a structure like this, and we make a rule that the
         element that appears alone goes first. Keep in mind that this set can
         appear in any order:
       </p>
-      <CustomLatex latex={"(a, b) := \\{\\{b, a\\}, \\{a\\}\\}"} />
+      <CustomLatex latex={"\\large (a, b) := \\{\\{b, a\\}, \\{a\\}\\}"} />
       <p>
         These two are identical, because again the order the set elements appear
         in does not matter, what matters is which one is alone. To be more
@@ -27,10 +27,8 @@ const Relations = () => {
         Expanded, this would look like:
       </p>
       <CustomLatex
-        latex={
-          "(a, b, c) := \\{\\{a\\}, \\{a, (b, c)\\}\\} = \\{\\{a\\}, \\{a, \\{\\{b\\}, \\{b, c\\}\\}\\}\\}"
-        }
-      />
+        latex={ "\\large (a, b, c) := \\{\\{a\\}, \\{a, (b, c)\\}\\} =" } />
+      <CustomLatex latex={"\\large \\{\\{a\\}, \\{a, \\{\\{b\\}, \\{b, c\\}\\}\\}\\}"} />
       <p>
         Quickly, let's also define the cartesian product of two sets. Simply,
         the cartesian product is a set that contains every possible ordered pair
@@ -40,43 +38,52 @@ const Relations = () => {
         and we can see how it works in the table below:
       </p>
       <table>
-      <thead>
-         <tr>
-          <th>
-            <CustomLatex latex={"A \\times B"} block={false} />
-          </th>
-          <th>1</th>
-          <th>2</th>
-          <th>3</th>
-        </tr>
- 
-      </thead>
+          <thead>
+             <tr>
+              <th>
+                <CustomLatex latex={"\\small A \\times B"} block={false} />
+              </th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+            </tr>
+     
+          </thead>
       
-      <tbody>
-         <tr>
-          <th>a</th>
-          <td>(1, a)</td>
-          <td>(2, a)</td>
-          <td>(3, a)</td>
-        </tr>
-        <tr>
-          <th>b</th>
-          <td>(1, b)</td>
-          <td>(2, b)</td>
-          <td>(3, b)</td>
-        </tr>
-        <tr>
-          <th>c</th>
-          <td>(1, c)</td>
-          <td>(2, c)</td>
-          <td>(3, c)</td>
-        </tr>
- 
-      </tbody>
+          <tbody>
+             <tr>
+              <th>a</th>
+              <td>(1, a)</td>
+              <td>(2, a)</td>
+              <td>(3, a)</td>
+            </tr>
+            <tr>
+              <th>b</th>
+              <td>(1, b)</td>
+              <td>(2, b)</td>
+              <td>(3, b)</td>
+            </tr>
+            <tr>
+              <th>c</th>
+              <td>(1, c)</td>
+              <td>(2, c)</td>
+              <td>(3, c)</td>
+            </tr>
+     
+          </tbody>
       </table>
       <CustomLatex
         latex={
-          "A = \\{1, 2, 3\\} \\qquad B = \\{a, b, c\\} \\newline \\qquad A \\times B = \\{(1, a), (1, b), (1, c), \\newline (2, a), (2, b), (2, c), \\newline (3, a), (3, b), (3, c)\\}"
+          "\\large A = \\{1, 2, 3\\} \\qquad B = \\{a, b, c\\}"
+        }
+      />
+      <CustomLatex
+        latex={
+          `\\large A \\times B = \\begin{Bmatrix}
+            (1, a) & (1, b) & (1, c) \\\\ 
+            (2, a) & (2, b) & (2, c) \\\\ 
+            (3, a) & (3, b) & (3, c)
+          \\end{Bmatrix}`
         }
       />
       <p>
@@ -92,7 +99,7 @@ const Relations = () => {
         </Link>
         .
       </p>
-    </>
+    </div>
   );
 };
 

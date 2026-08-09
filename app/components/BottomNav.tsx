@@ -23,15 +23,15 @@ const BottomNav = () => {
     const next = summaries[index + 1]
 
 
-    return <div className="bg-(--menu-color-light) flex items-center justify-evenly py-4 border-t-2 border-(--border-color-light) text-(--soft-text-light)">    
+    return <div className="bg-(--menu-color-medium) flex items-center justify-evenly py-4 border-t-2 border-(--border-color-light) text-(--soft-text-light)">    
         <div className="w-9/20">
-            {prev && <Link className="w-full px-2 py-1 text-center flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={prev.route}>
+            {prev && <Link className="w-full px-2 py-1 text-center text-(--hard-text-dark) flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={prev.route}>
                 <FontAwesomeIcon className="text-xs" icon={faArrowLeft} />
                 {prev.name.split("-").slice(1).join(" ")}
             </Link>}
         </div>
         <div className="w-9/20">
-            {next && <Link className="w-full px-2 py-1 text-center flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={next.route}>
+            {next && <Link className="w-full px-2 py-1 text-center text-(--hard-text-dark) flex justify-center items-center gap-2 border border-(--border-color-light) rounded-md capitalize" to={next.route}>
                 {next.name.split("-").slice(1).join(" ")}
                 <FontAwesomeIcon className="text-xs" icon={faArrowRight} />
             </Link>}

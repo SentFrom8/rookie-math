@@ -51,8 +51,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <header className="sticky top-0 z-100 relative">
             <NavBar menuAction={ (_) => {setContentTreeOpen(!sidebarOpen)} }/>
         </header>
-        <main className="h-full overflow-hidden relative flex flex-col">
-          <div className="overflow-scroll px-(--inline-padding-mobile) py-[1em] flex-1 flex-col gap-6">
+        <main className="h-full overflow-hidden relative flex flex-col text-(--hard-text-dark)">
+          <div className="overflow-scroll px-(--inline-padding-mobile) flex-1 flex-col gap-6">
             {children}
           </div>
           <SideBar sidebarOpen={sidebarOpen} >

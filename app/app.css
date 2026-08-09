@@ -3,9 +3,12 @@
 :root {
     --background-color-light: #F5F0E8;
     --menu-color-light: #EDE7D9;
+    --menu-color-medium: #DDD1B6;
     --border-color-light: #C8BC9E;
     --grid-lines-light: #b4a06e40;
     --soft-text-light: #6B5C3E;
+    --hard-text-dark: #262626;
+    --accent: #8B5E3C;
 
     --inline-padding-mobile: 1em;
 
@@ -19,12 +22,30 @@ body {
       linear-gradient(to bottom, var(--grid-lines-light) 1px, transparent 1px);
 }
 
-.styled-border::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: calc(100% + 1.3em);
-    height: 1px;
-    background-color: var(--border-color-light);
+.page h1 {
+    font-size: 1.2rem;
+}
+
+.page img {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.page table {
+    border: 1px solid var(--hard-text-dark)
+    border-collapse: collapse;
+}
+
+.page table thead {
+    background-color: var(--menu-color-medium)
+}
+
+.page table th {
+    border: 1px solid var(--hard-text-dark);
+}
+
+.page table td {
+    border: 1px solid var(--hard-text-dark);
+    text-align: center;
+    padding-block: 0.5rem;
 }
