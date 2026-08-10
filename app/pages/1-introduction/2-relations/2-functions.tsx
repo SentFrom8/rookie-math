@@ -8,10 +8,10 @@ const Functions = () => {
         We can define a function as an ordered triple of 3 sets (A, B, f) where
         A and B are not empty sets, and f is a relation that is a subset
         of&nbsp;
-        <CustomLatex latex={"A \\times B"} block={false} />. Often when people
+        <CustomLatex latex={"\\small A \\times B"} block={false} />. Often when people
         refer to a function, they are just talking about f and this was a bit
         confusing to me at first. We can also write this as:&nbsp;
-        <CustomLatex latex={"f: A \\to B"} block={false} />. A is called the
+        <CustomLatex latex={"\\small f: A \\to B"} block={false} />. A is called the
         domain of the function, and B is called the codomain or the image.
       </p>
       <img
@@ -40,12 +40,14 @@ const Functions = () => {
       <p>
         Now that we know what a function has to be, let's take a look into what
         it actually is. If we expand upon our definition, the relation that
-        defines our function (the f in (A, B, f)) would look like this:&nbsp;
+        defines our function (the f in (A, B, f)) would look like this:
+      </p>
         <CustomLatex
           latex={"f = \\{(1, a), (2, b), (3, b), (4, d), (5, d)\\}"}
         />
-        which is clearly a subset of&nbsp;
-        <CustomLatex latex={"A \\times B"} block={false} />. The image of a set
+      <p>
+        Which is clearly a subset of&nbsp;
+        <CustomLatex latex={"\\small A \\times B"} block={false} />. The image of a set
         is often denoted as <strong>ImA</strong>.
       </p>
       <p>
@@ -103,7 +105,7 @@ const Functions = () => {
         It's important to note that a function can only be bijective if the
         domain and codomain have the same cardinality. The inverse function is
         denoted with&nbsp;
-        <CustomLatex latex={"f^\{-1\}(x)"} block={false} /> and it looks like
+        <CustomLatex latex={"\\small f^\{-1\}(x)"} block={false} /> and it looks like
         this:
       </p>
       <img
@@ -114,15 +116,15 @@ const Functions = () => {
         As we can see, the inverse function is also bijective, the domain is B
         (codomain of f) and the codomain is A (the domain of f). In this
         context, x is an element of B and&nbsp;
-        <CustomLatex latex={"f^\{-1\}(x)"} block={false} /> returns an element
+        <CustomLatex latex={"\\small f^\{-1\}(x)"} block={false} /> returns an element
         from A that the arrow points to.
       </p>
       <p>
         We can also have multiple mappings between sets. Say we have a set A, B
         and C. We could have a function&nbsp;
-        <CustomLatex latex={"f : A \\to B"} block={false} /> and a
+        <CustomLatex latex={"\\small f : A \\to B"} block={false} /> and a
         function&nbsp;
-        <CustomLatex latex={"g: B \\to C"} block={false} />. Since elements from
+        <CustomLatex latex={"\\small g: B \\to C"} block={false} />. Since elements from
         A point to B and elements from B point to C, we could follow the arrows
         and create a mapping from A to C directly. This is known as a function
         composition and we write it down as:

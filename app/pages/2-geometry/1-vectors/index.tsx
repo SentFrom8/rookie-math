@@ -1,8 +1,8 @@
-import CustomLatex from "~/components/CustomLatex.tsx"
+import CustomLatex from "~/components/CustomLatex";
 
 const Vectors = () => {
   return (
-    <>
+    <div className="page">
       <p>
         In Euclidean geometry, we say that two pairs of points AB, CD are
         equivalent if the midpoints of AD, BC are the same. This is clear from
@@ -29,7 +29,7 @@ const Vectors = () => {
         direction is the line that the vector lies on and the orientation
         specifies which end of that line it's pointing towards.
       </p>
-    </>
+    </div>
   );
 };
 

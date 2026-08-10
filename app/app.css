@@ -22,8 +22,21 @@ body {
       linear-gradient(to bottom, var(--grid-lines-light) 1px, transparent 1px);
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    padding-block: 1rem;
+    gap: 1.5rem;
+}
+
 .page h1 {
     font-size: 1.2rem;
+    text-align: center;
+} 
+
+.page h2 {
+    text-align: center;
+    text-transform: capitalize;
 }
 
 .page img {
@@ -32,7 +45,9 @@ body {
 }
 
 .page table {
-    border: 1px solid var(--hard-text-dark)
+    min-width: 80%;
+    margin-inline: auto;
+    border: 1px solid var(--hard-text-dark);
     border-collapse: collapse;
 }
 
@@ -47,5 +62,32 @@ body {
 .page table td {
     border: 1px solid var(--hard-text-dark);
     text-align: center;
-    padding-block: 0.5rem;
+}
+
+.page a {
+    text-decoration: underline;
+}
+
+.page ul {
+    list-style: square inside;
+}
+
+.page ul li::marker {
+    color: var(--accent);
+}
+
+.page ol {
+    list-style: auto inside;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.page ol li {
+    font-size: 1.1rem;
+    margin-bottom: -1rem;
+}
+
+.page dl {
+    list-style: auto;
 }

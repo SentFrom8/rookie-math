@@ -2,70 +2,71 @@ import CustomLatex from "~/components/CustomLatex";
 
 const BinaryRelations = () => {
   return (
-    <>
+    <div className="page">
+      <h1>Binary relations</h1>
       <p>
-        Binary relations are ones that are the subset of the cartesian product
+        A relation is binary if it is a subset of the cartesian product
         of a set by itself.&nbsp;
-        <CustomLatex latex={"A^2 = A \\times A"} block={false} />. If a and b
+        <CustomLatex latex={"\\small A^2 = A \\times A"} block={false} />. If a and b
         are both elements of A and they are related to each other (the relation
         contains the element (a, b)) we can write that as a ρ b. Let's take the
         set&nbsp;
-        <CustomLatex latex={"A = \\{a, b, c, d, e\\}"} block={false} />. If we
+        <CustomLatex latex={"\\small A = \\{a, b, c, d, e\\}"} block={false} />. If we
         want to define or examine a binary relation on this set, we can do it
         easily using a table, like so:
       </p>
       <table>
           <thead>
             <tr>
-              <th>A</th>
-              <th>a</th>
-              <th>b</th>
-              <th>c</th>
-              <th>d</th>
-              <th>e</th>
+              <th><CustomLatex latex="\small A" block={false} /></th>
+              <th><CustomLatex latex="\small a" block={false} /></th>
+              <th><CustomLatex latex="\small b" block={false} /></th>
+              <th><CustomLatex latex="\small c" block={false} /></th>
+              <th><CustomLatex latex="\small d" block={false} /></th>
+              <th><CustomLatex latex="\small e" block={false} /></th>
             </tr>
           </thead>
          
           <tbody>
              <tr>
-              <th>a</th>
-              <td>1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
+              <th><CustomLatex latex="\small a" block={false} /></th>
+              <td><CustomLatex latex="\small 1" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
             </tr>
             <tr>
-              <th>b</th>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
+              <th><CustomLatex latex="\small b" block={false} /></th>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 1" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
             </tr>
             <tr>
-              <th>c</th>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
-              <td>0</td>
+              <th><CustomLatex latex="\small c" block={false} /></th>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 1" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
             </tr>
             <tr>
-              <th>d</th>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
-              <td>0</td>
+              <th><CustomLatex latex="\small d" block={false} /></th>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 1" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
             </tr>
             <tr>
-              <th>e</th>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>1</td>
+              <th><CustomLatex latex="\small e" block={false} /></th>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <td><CustomLatex latex="\small 1" block={false} /></td>
             </tr>
           </tbody>
       </table>
@@ -78,22 +79,22 @@ const BinaryRelations = () => {
         latex={"\\rho = \\{(a, a), (b, b), (c, c), (d, d), (e, e)\\}"}
       />
       <p>
-        Each element of A×A corresponds to either a 1 or a 0. In other words,
+        Each element of <CustomLatex latex="A \times A" block={false} /> corresponds to either a 1 or a 0. In other words,
         there is a mapping of each element from A×A to an element from a set
         that contains 1 and 0. This is actually a function, and it's knows as
         the characteristic function&nbsp;
         <CustomLatex
-          latex={"f_\{\\rho\} : A \\times A \\to \\{0, 1\\}"}
+          latex={"\\small f_\{\\rho\} : A \\times A \\to \\{0, 1\\}"}
           block={false}
         />
         . We can pass any element of A×A to this function and it will return 1
         if it's inside the relation, so&nbsp;
-        <CustomLatex latex={"f_\{\\rho\}((d, d)) = 1"} block={false} />. The
+        <CustomLatex latex={"\\small f_\{\\rho\}((d, d)) = 1"} block={false} />. The
         table above also allows us to see the matrix property of a binary
         relation and we can clearly see why the collection of pairs with the
         same elements is known as the diagonal.
       </p>
-      <h2>Properties of binary relations</h2>
+      <h2>Properties</h2>
       <p>
         We can describe any binary relation ρ of a set A using these properties:
       </p>
@@ -141,55 +142,55 @@ const BinaryRelations = () => {
       <table>
       <thead>
          <tr>
-          <th>A</th>
-          <th>a</th>
-          <th>b</th>
-          <th>c</th>
-          <th>d</th>
-          <th>e</th>
+          <th><CustomLatex latex="\small A" block={false} /></th>
+          <th><CustomLatex latex="\small a" block={false} /></th>
+          <th><CustomLatex latex="\small b" block={false} /></th>
+          <th><CustomLatex latex="\small c" block={false} /></th>
+          <th><CustomLatex latex="\small d" block={false} /></th>
+          <th><CustomLatex latex="\small e" block={false} /></th>
         </tr>
       </thead>
 
       <tbody>
          <tr>
-          <th>a</th>
-          <td>1</td>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small a" block={false} /></th>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>b</th>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
+          <th><CustomLatex latex="\small b" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
         </tr>
         <tr>
-          <th>c</th>
-          <td>1</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small c" block={false} /></th>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>d</th>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small d" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>e</th>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
+          <th><CustomLatex latex="\small e" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
         </tr>
  
       </tbody>
@@ -226,55 +227,55 @@ const BinaryRelations = () => {
       <table>
       <thead>
          <tr>
-          <th>A</th>
-          <th>a</th>
-          <th>b</th>
-          <th>c</th>
-          <th>d</th>
-          <th>e</th>
+          <th><CustomLatex latex="\small A" block={false} /></th>
+          <th><CustomLatex latex="\small a" block={false} /></th>
+          <th><CustomLatex latex="\small b" block={false} /></th>
+          <th><CustomLatex latex="\small c" block={false} /></th>
+          <th><CustomLatex latex="\small d" block={false} /></th>
+          <th><CustomLatex latex="\small e" block={false} /></th>
         </tr>
       </thead>
 
       <tbody>
          <tr>
-          <th>a</th>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>1</td>
+          <th><CustomLatex latex="\small a" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
         </tr>
         <tr>
-          <th>b</th>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small b" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>c</th>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
+          <th><CustomLatex latex="\small c" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
         </tr>
         <tr>
-          <th>d</th>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small d" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>e</th>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small e" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
  
       </tbody>
@@ -309,19 +310,17 @@ const BinaryRelations = () => {
         }
       />
       <p>And the classes would look like:</p>
-      <CustomLatex
-        latex={
-          "[0] = \\{0, 3, 6, 9, \\dots \\} \\qquad [1] = \\{1, 4, 7, 10, \\dots \\} \\qquad [2] = \\{2, 5, 8, 11, \\dots \\}"
-        }
-      />
+      <CustomLatex latex= "[0] = \{0, 3, 6, 9, \dots \}" />
+      <CustomLatex latex="[1] = \{1, 4, 7, 10, \dots \}" />
+      <CustomLatex latex="[2] = \{2, 5, 8, 11, \dots \}" />
       <p>
-        [0] This notation is used to represent a class, and it means this is a
+        <CustomLatex latex="\small [0]" block={false} /> This notation is used to represent a class, and it means this is a
         set of all elements related to the element 0 (in this instance that
         would be all the elements with the same remainder after dividing by 3).
         The number inside the bracket is called the representative, and it can
         be any element of the class. So [0] = [3] = [6] and so on. One important
         point is that two different classes are disjoint, so&nbsp;
-        <CustomLatex latex={"[0] \\bigcup [1] = \\emptyset"} block={false} />
+        <CustomLatex latex={"\\small [0] \\bigcup [1] = \\emptyset"} block={false} />
       </p>
       <h2>Partial order relations</h2>
       <p>
@@ -341,66 +340,62 @@ const BinaryRelations = () => {
       <table>
       <thead>
          <tr>
-          <th>A</th>
-          <th>a</th>
-          <th>b</th>
-          <th>c</th>
-          <th>d</th>
-          <th>e</th>
+          <th><CustomLatex latex="\small A" block={false} /></th>
+          <th><CustomLatex latex="\small a" block={false} /></th>
+          <th><CustomLatex latex="\small b" block={false} /></th>
+          <th><CustomLatex latex="\small c" block={false} /></th>
+          <th><CustomLatex latex="\small d" block={false} /></th>
+          <th><CustomLatex latex="\small e" block={false} /></th>
         </tr>
  
       </thead>
 
       <tbody>
          <tr>
-          <th>a</th>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small a" block={false} /></th>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>b</th>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small b" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>c</th>
-          <td>0</td>
-          <td>0</td>
-          <td>1</td>
-          <td>0</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small c" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>d</th>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
+          <th><CustomLatex latex="\small d" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
-          <th>e</th>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>0</td>
-          <td>1</td>
+          <th><CustomLatex latex="\small e" block={false} /></th>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td><CustomLatex latex="\small 1" block={false} /></td>
         </tr>
  
       </tbody>
               </table>
       <p>Our relation looks like this:</p>
-      <CustomLatex
-        latex={
-          "\\rho = \\{\\text\{(a, a), (b, b), (b, c), (c, c), (d, b), (d, c), (d, d), (e, b), (e, c), (e, e)\}\\}"
-        }
-      />
+      <CustomLatex latex="\rho = \{(a, a), (b, b), (b, c), (c, c), \\ (d, b), (d, c), (d, d), (e, b), (e, c), (e, e)\}" />
       <p>
         As we can see, I'm not following any rule or using any logic to define
         this, I just picked random values and made sure the properties are
@@ -410,7 +405,7 @@ const BinaryRelations = () => {
         The ordered pair containing the set and the relation (A, ρ) is called a
         poset.
       </p>
-    </>
+    </div>
   );
 };
 
