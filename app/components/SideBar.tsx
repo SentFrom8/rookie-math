@@ -20,7 +20,7 @@ const SideBar = ({ children, ...props }: SidebarProps) => {
 
         const handleClickOutside = (e: MouseEvent) => {
             if (e.target && e.target instanceof Element){
-                if (!e.target.closest("aside") && sidebarOpen) setSidebarOpen(false)
+                if (!e.target.closest("#sidebar")) setSidebarOpen(false)
             }
         }
 
@@ -34,7 +34,7 @@ const SideBar = ({ children, ...props }: SidebarProps) => {
         }
     }, [sidebarRef.current])
 
-    return <aside inert={!sidebarOpen} ref={sidebarRef} {...props} className={`absolute left-full ${sidebarOpen && "-translate-x-full"} top-0 h-full w-4/5 z-100 bg-(--menu-color-light) text-(--hard-text-dark) flex flex-col transition`}>
+    return <aside id="sidebar" inert={!sidebarOpen} ref={sidebarRef} {...props} className={`absolute left-full ${sidebarOpen && "-translate-x-full"} top-0 h-full w-4/5 z-100 bg-(--menu-color-light) text-(--hard-text-dark) flex flex-col transition`}>
         <button className="p-2 self-end text-2xl" onClick={() => setSidebarOpen(false)}><FontAwesomeIcon icon={faX} /></button>
         {children}
     </aside>
