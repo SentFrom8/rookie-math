@@ -1,14 +1,12 @@
-import { RouteTree } from "~/utils/globals"
-import HamburgerMenu from "./HamburgerMenu"
 import { useLocation } from "react-router" 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
+import { useContext } from "react"
+import { SidebarContext } from "~/utils/contexts"
 
-interface NavbarProps {
-    menuAction: (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => void
-}
 
-const NavBar = ({ menuAction }: NavbarProps) => {
+const NavBar = () => {
+    const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext)
     let location = useLocation()
     const sectionNum = (location.pathname.match(/\d+(?=-)/g) ?? []).join(".")
     let section = location.pathname.split("/").at(-1) || "Home"
@@ -18,8 +16,10 @@ const NavBar = ({ menuAction }: NavbarProps) => {
       <div className="capitalize flex flex-col text-(--hard-text-dark)">
         <span className="text-[#9C8B6E] text-sm">{sectionNum}</span>{section}
       </div>
-      <FontAwesomeIcon className="text-3xl" icon={faBars} onClick={menuAction} />
-    </nav>
+          <button disabled={sidebarOpen} onClick={() => {setSidebarOpen(true)}}>
+            <FontAwesomeIcon className="text-3xl" icon={faBars} />
+          </button>
+      </nav>
 }
 
 export default NavBar

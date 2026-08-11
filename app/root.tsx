@@ -9,7 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { Link } from "react-router";
 import NavBar from "./components/NavBar"
 import SideBar from "./components/SideBar";
@@ -17,6 +17,7 @@ import ContentTree from "./components/ContentTree";
 import BottomNav from "./components/BottomNav"
 import { RouteTree } from "./utils/globals";
 import type { Directory } from "./utils/types";
+import { SidebarContext } from "./utils/contexts";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -36,7 +37,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setContentTreeOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const pages = RouteTree.children.find(node => node.type == "Directory" && node.name == "pages") as Directory | undefined
 
   return (
@@ -47,25 +48,28 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="h-svh flex flex-col">
-        <header className="sticky top-0 z-100 relative">
-            <NavBar menuAction={ (_) => {setContentTreeOpen(!sidebarOpen)} }/>
-        </header>
-        <main className="h-full overflow-hidden relative flex flex-col text-(--hard-text-dark)">
-          <div className="overflow-scroll px-(--inline-padding-mobile) flex-1 flex-col gap-6">
-            {children}
-          </div>
-          <SideBar sidebarOpen={sidebarOpen} >
-            <Link to={"/"} className="w-full inline-block pl-(--inline-padding-mobile) py-2 border-b-1 border-(--border-color-light)">About the project</Link>
-            {pages && <ContentTree dir={pages} />}
-          </SideBar>
-          <footer>
-          <BottomNav />
-          </footer>
-        </main>
-        <ScrollRestoration />
-        <Scripts />
-      </body>
+      <SidebarContext value={{ sidebarOpen, setSidebarOpen }}>
+          <body className="h-svh flex flex-col overflow-hidden">
+            <header className="sticky top-0 z-100 relative">
+                    <NavBar />
+            </header>
+            <main className="h-full overflow-hidden relative flex flex-col text-(--hard-text-dark)">
+              <div className="overflow-scroll px-(--inline-padding-mobile) flex-1 flex-col gap-6">
+                {children}
+              </div>
+              
+              <footer>
+              <BottomNav />
+              </footer>
+            </main>
+            <ScrollRestoration />
+            <Scripts />
+            <SideBar>
+                <Link to={"/"} className="w-full inline-block pl-(--inline-padding-mobile) py-2 border-b-1 border-(--border-color-light)">About the project</Link>
+                {pages && <ContentTree dir={pages} />}
+            </SideBar>
+          </body>
+    </SidebarContext>
     </html>
   );
 }
