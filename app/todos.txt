@@ -3,3 +3,4 @@
 - Make sure the content tree closes when not clicked on
 - Needs a form
 - Desktop styles
+- vectors

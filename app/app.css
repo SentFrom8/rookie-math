@@ -91,3 +91,9 @@ body {
 .page dl {
     list-style: auto;
 }
+
+#sidebar {
+    @starting-style {
+        transform: translateX(100%);
+    }
+}

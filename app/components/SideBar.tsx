@@ -8,33 +8,30 @@ interface SidebarProps extends React.ComponentProps<"aside"> {
 }
 
 const SideBar = ({ children, ...props }: SidebarProps) => {
-    const sidebarRef = useRef<HTMLElement | null>(null)
     const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext)
+    const sidebarRef = useRef<HTMLElement | null>(null)
 
     useEffect(() => {
-        if (!sidebarRef.current) return
-
-        const handleEsc = (e: KeyboardEvent) => {
+        const handleEscape = (e: KeyboardEvent) => {
             if (e.key === "Escape") setSidebarOpen(false)
         }
 
         const handleClickOutside = (e: MouseEvent) => {
             if (e.target && e.target instanceof Element){
-                if (!e.target.closest("#sidebar")) setSidebarOpen(false)
+                if (!e.target.closest("#sidebar") && !e.target.closest(".sidebar-control")) setSidebarOpen(false)
             }
         }
 
-        window.addEventListener("keydown", handleEsc)
-        window.addEventListener("mousedown", handleClickOutside)
+        window.addEventListener("keydown", handleEscape)
+        window.addEventListener("click", handleClickOutside)
 
-        
         return () => {
-            window.removeEventListener("keydown", handleEsc)
-            window.removeEventListener("mousedown", handleClickOutside)
+            window.removeEventListener("keydown", handleEscape)
+            window.removeEventListener("click", handleClickOutside)
         }
-    }, [sidebarRef.current])
+    }, [])
 
-    return <aside id="sidebar" inert={!sidebarOpen} ref={sidebarRef} {...props} className={`absolute left-full ${sidebarOpen && "-translate-x-full"} top-0 h-full w-4/5 z-100 bg-(--menu-color-light) text-(--hard-text-dark) flex flex-col transition`}>
+    return <aside id="sidebar" ref={sidebarRef} {...props} className={`absolute left-full top-0 h-full w-4/5 z-100 bg-(--menu-color-light) text-(--hard-text-dark) ${sidebarOpen ? "flex -translate-x-full" : "hidden"} flex-col transition transition-discrete`}>
         <button className="p-2 self-end text-2xl" onClick={() => setSidebarOpen(false)}><FontAwesomeIcon icon={faX} /></button>
         {children}
     </aside>

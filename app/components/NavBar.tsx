@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className="capitalize flex flex-col text-(--hard-text-dark)">
         <span className="text-[#9C8B6E] text-sm">{sectionNum}</span>{section}
       </div>
-          <button disabled={sidebarOpen} onClick={() => {setSidebarOpen(true)}}>
+          <button className="sidebar-control" disabled={sidebarOpen} onClick={() => setSidebarOpen(true)}>
             <FontAwesomeIcon className="text-3xl" icon={faBars} />
           </button>
       </nav>
