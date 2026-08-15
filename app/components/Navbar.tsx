@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { SidebarContext } from "~/utils/contexts"
 
 
-const NavBar = () => {
+const Navbar = () => {
     const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext)
     let location = useLocation()
     const sectionNum = (location.pathname.match(/\d+(?=-)/g) ?? []).join(".")
@@ -14,12 +14,12 @@ const NavBar = () => {
 
     return <nav className="w-full text-(--hard-text-dark) flex items-center justify-between bg-(--menu-color-medium) px-(--inline-padding-mobile) py-5 border-b-2 border-(--border-color-light) shadow-sm">
       <div className="capitalize flex flex-col text-(--hard-text-dark)">
-        <span className="text-[#9C8B6E] text-sm">{sectionNum}</span>{section}
+        <span className="text-(--soft-lines) text-sm">{sectionNum}</span>{section}
       </div>
-          <button className="sidebar-control" disabled={sidebarOpen} onClick={() => setSidebarOpen(true)}>
+          <button className="sidebar-control cursor-pointer" disabled={sidebarOpen} onClick={() => setSidebarOpen(true)}>
             <FontAwesomeIcon className="text-3xl" icon={faBars} />
           </button>
       </nav>
 }
 
-export default NavBar
+export default Navbar

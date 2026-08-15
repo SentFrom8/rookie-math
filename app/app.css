@@ -8,6 +8,7 @@
     --grid-lines-light: #b4a06e40;
     --soft-text-light: #6B5C3E;
     --hard-text-dark: #262626;
+    --soft-lines: #9C8B6E;
     --accent: #8B5E3C;
 
     --inline-padding-mobile: 1em;
@@ -104,6 +105,10 @@ body {
     @starting-style {
         transform: translateX(100%);
     }
+}
+
+#sidebar a:hover {
+    color: var(--soft-lines);
 }
 
 .transitivity-horizontal {

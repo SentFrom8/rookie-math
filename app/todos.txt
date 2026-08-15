@@ -1,5 +1,5 @@
-- Add lines to better display transitivity in the table
 - Desktop styles
-- Style the navbar
 - vectors, home and update transitivity in binary relations
-- fix routes with no content
+- lint
+- collapsible categories
+- shadow when sidebar is open

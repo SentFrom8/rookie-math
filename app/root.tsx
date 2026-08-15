@@ -9,15 +9,16 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
-import NavBar from "./components/NavBar"
-import SideBar from "./components/SideBar";
+import Navbar from "./components/Navbar"
+import Sidebar from "./components/Sidebar";
 import ContentTree from "./components/ContentTree";
 import BottomNav from "./components/BottomNav"
 import { RouteTree } from "./utils/globals";
 import type { Directory } from "./utils/types";
 import { SidebarContext } from "./utils/contexts";
+import { useLocation } from "react-router";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -38,6 +39,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  let location = useLocation()
   const pages = RouteTree.children.find(node => node.type == "Directory" && node.name == "pages") as Directory | undefined
 
   return (
@@ -51,7 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <SidebarContext value={{ sidebarOpen, setSidebarOpen }}>
           <body className="h-svh flex flex-col overflow-hidden">
             <header className="sticky top-0 z-100 relative">
-                    <NavBar />
+                <Navbar />
             </header>
             <main className="h-full overflow-hidden relative flex flex-col text-(--hard-text-dark)">
               <div className="overflow-scroll px-(--inline-padding-mobile) flex-1 flex-col gap-6">
@@ -64,11 +66,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </main>
             <ScrollRestoration />
             <Scripts />
-            <SideBar>
-                <Link to="/">Home</Link>
-                <Link to="/suggestions">Give feedback</Link>
+            <Sidebar>
+                <Link to="/" className={`pl-(--inline-padding-mobile) py-2 ${location.pathname === "/" ? "bg-(--menu-color-medium) border-l-4 border-(--accent)" : ""}`}>Home</Link>
+                <Link to="/suggestions" className={`pl-(--inline-padding-mobile) py-2 ${location.pathname === "/suggestions" ? "bg-(--menu-color-medium) border-l-4 border-(--accent)" : ""}`}>Give Feedback</Link>
                 {pages && <ContentTree dir={pages} />}
-            </SideBar>
+            </Sidebar>
           </body>
     </SidebarContext>
     </html>
