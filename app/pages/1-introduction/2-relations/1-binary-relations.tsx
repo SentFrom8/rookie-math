@@ -99,21 +99,21 @@ const BinaryRelations = () => {
         We can describe any binary relation ρ of a set A using these properties:
       </p>
       <dl>
-        <dt>Reflexivity (r)</dt>
+        <dt>Reflexivity</dt>
         <dd>Does the relation contain the entire diagonal?</dd>
-        <dt>Antireflexivity (ar)</dt>
+        <dt>Antireflexivity</dt>
         <dd>Does the relation contain zero elements from the diagonal?</dd>
-        <dt>Symmetry (s)</dt>
+        <dt>Symmetry</dt>
         <dd>
           Does it contain the element on the opposite side of the diagonal for
           each element?
         </dd>
-        <dt>Antisymmetri (as)</dt>
+        <dt>Antisymmetry</dt>
         <dd>
           Does it contain zero elements that are on the opposite side of the
           diagonal for any of the elements?
         </dd>
-        <dt>Transitivity (t)</dt>
+        <dt>Transitivity</dt>
         <dd>If it contains (a, b) and (b, c), does it also contain (a, c)?</dd>
       </dl>
       <h3>Reflexivity</h3>
@@ -224,11 +224,11 @@ const BinaryRelations = () => {
         latex={"(a, b), (b, c) \\in \\rho \\implies (a, c) \\in \\rho"}
       />
       <p>Let's try to see this in the table:</p>
-      <table>
+      <table className="relative">
       <thead>
          <tr>
           <th><CustomLatex latex="\small A" block={false} /></th>
-          <th><CustomLatex latex="\small a" block={false} /></th>
+          <th className="transitivity-vertical"><CustomLatex latex="\small a" block={false} /></th>
           <th><CustomLatex latex="\small b" block={false} /></th>
           <th><CustomLatex latex="\small c" block={false} /></th>
           <th><CustomLatex latex="\small d" block={false} /></th>
@@ -239,31 +239,31 @@ const BinaryRelations = () => {
       <tbody>
          <tr>
           <th><CustomLatex latex="\small a" block={false} /></th>
+          <td className="transitivity-vertical"><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
-        <tr>
+        <tr className="transitivity-horizontal">
           <th><CustomLatex latex="\small b" block={false} /></th>
+          <td className="transitivity-vertical"><CustomLatex latex="\small 1" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
           <td><CustomLatex latex="\small 1" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
           <th><CustomLatex latex="\small c" block={false} /></th>
+          <td className="transitivity-vertical"><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <td><CustomLatex latex="\small 0" block={false} /></td>
         </tr>
         <tr>
           <th><CustomLatex latex="\small d" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td className="transitivity-vertical"><CustomLatex latex="\small 1" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
@@ -271,7 +271,7 @@ const BinaryRelations = () => {
         </tr>
         <tr>
           <th><CustomLatex latex="\small e" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <td className="transitivity-vertical"><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
           <td><CustomLatex latex="\small 0" block={false} /></td>
@@ -281,8 +281,7 @@ const BinaryRelations = () => {
       </tbody>
       </table>
       <p>
-        If we were to draw a horizontal line through (a, b) in the grid, and a
-        vertical one through (b, c), there must be 1 on the intersection.
+        The relation <CustomLatex latex="\small \{(b, d), (d, a), (b, a)\}" block={false} />
       </p>
       <h2>Important relations</h2>
       <h3>Equivalence relations</h3>

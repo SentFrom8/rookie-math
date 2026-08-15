@@ -88,12 +88,42 @@ body {
     margin-bottom: -1rem;
 }
 
-.page dl {
-    list-style: auto;
+.page dt {
+    font-weight: bold;
+}
+
+.page dd {
+    padding-left: var(--inline-padding-mobile);
+}
+
+.page dd:not(.page dd:last-child) {
+    margin-bottom: 1em;
 }
 
 #sidebar {
     @starting-style {
         transform: translateX(100%);
     }
+}
+
+.transitivity-horizontal {
+    background:
+        linear-gradient(
+            to bottom,
+            transparent calc(50% - 2px),
+            lightsteelblue calc(50% - 2px),
+            lightsteelblue calc(50% + 2px),
+            transparent calc(50% + 2px)
+        );
+}
+
+.transitivity-vertical {
+    background:
+        linear-gradient(
+            to left,
+            transparent calc(50% - 2px),
+            lightcoral calc(50% - 2px),
+            lightcoral calc(50% + 2px),
+            transparent calc(50% + 2px)
+        );
 }
