@@ -65,7 +65,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <ScrollRestoration />
             <Scripts />
             <SideBar>
-                <Link to={"/"} className="w-full inline-block pl-(--inline-padding-mobile) py-2 border-b-1 border-(--border-color-light)">About the project</Link>
+                <Link to="/">Home</Link>
+                <Link to="/suggestions">Give feedback</Link>
                 {pages && <ContentTree dir={pages} />}
             </SideBar>
           </body>

@@ -1,3 +1,5 @@
+import * as z from "zod"
+
 export type File = {
     type: "File"
     name: string
@@ -20,3 +22,9 @@ export type PageSummary = {
     name: string
     route: string
 }
+
+export const SuggestionSchema = z.array(z.object({
+    type: z.union([z.literal("bug"), z.literal("correction"), z.literal("comment")]),
+    email: z.email(),
+    description: z.string()
+}))

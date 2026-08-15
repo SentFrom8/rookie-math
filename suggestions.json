@@ -1,0 +1,37 @@
+[
+    {
+        "type": "bug",
+        "email": "test@test.test",
+        "description": "test1"
+    },
+    {
+        "type": "bug",
+        "email": "test@test.test",
+        "description": "test2"
+    },
+    {
+        "type": "bug",
+        "email": "test@test.test",
+        "description": "test3"
+    },
+    {
+        "type": "bug",
+        "email": "test@test.test",
+        "description": "test4"
+    },
+    {
+        "type": "bug",
+        "email": "testtest@test.test",
+        "description": "123"
+    },
+    {
+        "type": "bug",
+        "email": "sentfrom8@gmail.com",
+        "description": "123"
+    },
+    {
+        "type": "bug",
+        "email": "sentfrom8@gmail.com",
+        "description": "123"
+    }
+]
