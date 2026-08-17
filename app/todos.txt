@@ -1,5 +1,8 @@
-- Desktop styles
 - vectors, home and update transitivity in binary relations
 - lint
 - collapsible categories
-- shadow when sidebar is open
+- shadow when sidebar is open + accessibility
+- feedback
+- better name
+- make email optional
+- limit animations on the sidebar

@@ -15,58 +15,58 @@ const BinaryRelations = () => {
         want to define or examine a binary relation on this set, we can do it
         easily using a table, like so:
       </p>
-      <table>
+      <table className="square-table">
           <thead>
             <tr>
-              <th><CustomLatex latex="\small A" block={false} /></th>
-              <th><CustomLatex latex="\small a" block={false} /></th>
-              <th><CustomLatex latex="\small b" block={false} /></th>
-              <th><CustomLatex latex="\small c" block={false} /></th>
-              <th><CustomLatex latex="\small d" block={false} /></th>
-              <th><CustomLatex latex="\small e" block={false} /></th>
+              <th><div><CustomLatex latex="\small A" block={false} /></div></th>
+              <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+              <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+              <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+              <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+              <th><div><CustomLatex latex="\small e" block={false} /></div></th>
             </tr>
           </thead>
          
           <tbody>
              <tr>
-              <th><CustomLatex latex="\small a" block={false} /></th>
-              <td><CustomLatex latex="\small 1" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+              <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
             </tr>
             <tr>
-              <th><CustomLatex latex="\small b" block={false} /></th>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 1" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
             </tr>
             <tr>
-              <th><CustomLatex latex="\small c" block={false} /></th>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 1" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
             </tr>
             <tr>
-              <th><CustomLatex latex="\small d" block={false} /></th>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 1" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
+              <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
             </tr>
             <tr>
-              <th><CustomLatex latex="\small e" block={false} /></th>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 0" block={false} /></td>
-              <td><CustomLatex latex="\small 1" block={false} /></td>
+              <th><div><CustomLatex latex="\small e" block={false} /></div></th>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+              <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
             </tr>
           </tbody>
       </table>
@@ -139,58 +139,58 @@ const BinaryRelations = () => {
       </p>
       <CustomLatex latex={"(a, b) \\in \\rho \\implies (b, a) \\in \\rho"} />
       <p>Here is an example of one such relation:</p>
-      <table>
+      <table className="square-table">
       <thead>
          <tr>
-          <th><CustomLatex latex="\small A" block={false} /></th>
-          <th><CustomLatex latex="\small a" block={false} /></th>
-          <th><CustomLatex latex="\small b" block={false} /></th>
-          <th><CustomLatex latex="\small c" block={false} /></th>
-          <th><CustomLatex latex="\small d" block={false} /></th>
-          <th><CustomLatex latex="\small e" block={false} /></th>
+          <th><div><CustomLatex latex="\small A" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
         </tr>
       </thead>
 
       <tbody>
          <tr>
-          <th><CustomLatex latex="\small a" block={false} /></th>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small b" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small c" block={false} /></th>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small d" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small e" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
         </tr>
  
       </tbody>
@@ -224,58 +224,58 @@ const BinaryRelations = () => {
         latex={"(a, b), (b, c) \\in \\rho \\implies (a, c) \\in \\rho"}
       />
       <p>Let's try to see this in the table:</p>
-      <table className="relative">
+      <table className="square-table">
       <thead>
          <tr>
-          <th><CustomLatex latex="\small A" block={false} /></th>
-          <th className="transitivity-vertical"><CustomLatex latex="\small a" block={false} /></th>
-          <th><CustomLatex latex="\small b" block={false} /></th>
-          <th><CustomLatex latex="\small c" block={false} /></th>
-          <th><CustomLatex latex="\small d" block={false} /></th>
-          <th><CustomLatex latex="\small e" block={false} /></th>
+          <th><div><CustomLatex latex="\small A" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
         </tr>
       </thead>
 
       <tbody>
          <tr>
-          <th><CustomLatex latex="\small a" block={false} /></th>
-          <td className="transitivity-vertical"><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+          <td className="transitivity-vertical"><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr className="transitivity-horizontal">
-          <th><CustomLatex latex="\small b" block={false} /></th>
-          <td className="transitivity-vertical"><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+          <td className="transitivity-vertical"><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small c" block={false} /></th>
-          <td className="transitivity-vertical"><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+          <td className="transitivity-vertical"><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small d" block={false} /></th>
-          <td className="transitivity-vertical"><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+          <td className="transitivity-vertical"><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small e" block={false} /></th>
-          <td className="transitivity-vertical"><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
+          <td className="transitivity-vertical"><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
  
       </tbody>
@@ -336,65 +336,65 @@ const BinaryRelations = () => {
         is that they satisfy the properties of their respective relation type.
         In fact, let's make a partial order relation using our previous set A.
       </p>
-      <table>
+      <table className="square-table">
       <thead>
          <tr>
-          <th><CustomLatex latex="\small A" block={false} /></th>
-          <th><CustomLatex latex="\small a" block={false} /></th>
-          <th><CustomLatex latex="\small b" block={false} /></th>
-          <th><CustomLatex latex="\small c" block={false} /></th>
-          <th><CustomLatex latex="\small d" block={false} /></th>
-          <th><CustomLatex latex="\small e" block={false} /></th>
+          <th><div><CustomLatex latex="\small A" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
         </tr>
  
       </thead>
 
       <tbody>
          <tr>
-          <th><CustomLatex latex="\small a" block={false} /></th>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small b" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small c" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small d" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
+          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
         </tr>
         <tr>
-          <th><CustomLatex latex="\small e" block={false} /></th>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
-          <td><CustomLatex latex="\small 0" block={false} /></td>
-          <td><CustomLatex latex="\small 1" block={false} /></td>
+          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
+          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
         </tr>
  
       </tbody>
               </table>
       <p>Our relation looks like this:</p>
-      <CustomLatex latex="\rho = \{(a, a), (b, b), (b, c), (c, c), \\ (d, b), (d, c), (d, d), (e, b), (e, c), (e, e)\}" />
+      <CustomLatex latex="\rho = \{(a, a), (b, b), (b, c), \\ (c, c), (d, b), (d, c), (d, d), \\ (e, b), (e, c), (e, e)\}" />
       <p>
         As we can see, I'm not following any rule or using any logic to define
         this, I just picked random values and made sure the properties are

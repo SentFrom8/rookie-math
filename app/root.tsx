@@ -55,22 +55,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <header className="sticky top-0 z-100 relative">
                 <Navbar />
             </header>
-            <main className="h-full overflow-hidden relative flex flex-col text-(--hard-text-dark)">
-              <div className="overflow-scroll px-(--inline-padding-mobile) flex-1 flex-col gap-6">
-                {children}
-              </div>
-              
-              <footer>
-              <BottomNav />
-              </footer>
-            </main>
+
+            <div className="w-full flex-1 overflow-hidden flex justify-center">
+                <main className="h-full w-full overflow-auto px-(--inline-padding-sm) max-w-(--width-sm) md:max-w-(--width-lg) 2xl:max-w-(--width-xl) shadow-lg relative flex flex-col gap-6 text-(--hard-text-dark)">
+                    {children}
+                </main>
+
+                 <Sidebar>
+                    <Link to="/" className={`xl:hidden pl-(--inline-padding-sm) py-2 ${location.pathname === "/" ? "bg-(--menu-color-medium) border-l-4 border-(--accent)" : ""}`}>Home</Link>
+                    <Link to="/suggestions" className={`xl:hidden pl-(--inline-padding-sm) py-2 ${location.pathname === "/suggestions" ? "bg-(--menu-color-medium) border-l-4 border-(--accent)" : ""}`}>Give Feedback</Link>
+                    {pages && <ContentTree dir={pages} />}
+                </Sidebar>
+            </div>
+
             <ScrollRestoration />
             <Scripts />
-            <Sidebar>
-                <Link to="/" className={`pl-(--inline-padding-mobile) py-2 ${location.pathname === "/" ? "bg-(--menu-color-medium) border-l-4 border-(--accent)" : ""}`}>Home</Link>
-                <Link to="/suggestions" className={`pl-(--inline-padding-mobile) py-2 ${location.pathname === "/suggestions" ? "bg-(--menu-color-medium) border-l-4 border-(--accent)" : ""}`}>Give Feedback</Link>
-                {pages && <ContentTree dir={pages} />}
-            </Sidebar>
+            <footer className={`xl:hidden`}>
+              <BottomNav />
+            </footer>
           </body>
     </SidebarContext>
     </html>

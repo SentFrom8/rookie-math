@@ -11,11 +11,22 @@
     --soft-lines: #9C8B6E;
     --accent: #8B5E3C;
 
-    --inline-padding-mobile: 1em;
+    --inline-padding-sm: 1em;
+    --inline-padding-md: 8em;
+    --block-padding-md: 2rem;
 
+    --width-sm: 32rem;
+    --width-lg: 44rem;
+    --width-xl: 60rem;
+    
+    --navbar-height: 5rem;
 }
 
 body {
+    background-color: var(--menu-color-light);
+}
+
+main {
     background-color: var(--background-color-light);
     background-size: 20px 20px;
     background-image:
@@ -23,10 +34,17 @@ body {
       linear-gradient(to bottom, var(--grid-lines-light) 1px, transparent 1px);
 }
 
+#sidebar {
+    max-width: 25rem;
+    @starting-style {
+        transform: translateX(100%);
+    }
+}
+
 .page {
     display: flex;
     flex-direction: column;
-    padding-block: 1rem;
+    padding-block: var(--block-padding-md);
     gap: 1.5rem;
 }
 
@@ -42,27 +60,25 @@ body {
 
 .page img {
     width: 80%;
+    max-width: 26rem;
     margin-inline: auto;
 }
 
 .page table {
-    min-width: 80%;
     margin-inline: auto;
     border: 1px solid var(--hard-text-dark);
     border-collapse: collapse;
 }
 
-.page table thead {
-    background-color: var(--menu-color-medium)
-}
-
 .page table th {
-    border: 1px solid var(--hard-text-dark);
+    background-color: var(--menu-color-medium);
 }
 
-.page table td {
+.page table th, td {
     border: 1px solid var(--hard-text-dark);
     text-align: center;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
 }
 
 .page a {
@@ -94,21 +110,23 @@ body {
 }
 
 .page dd {
-    padding-left: var(--inline-padding-mobile);
+    padding-left: var(--inline-padding-sm);
 }
 
 .page dd:not(.page dd:last-child) {
     margin-bottom: 1em;
 }
 
-#sidebar {
-    @starting-style {
-        transform: translateX(100%);
-    }
+.page .square-table th, td {
+    padding: 1rem;
 }
 
-#sidebar a:hover {
-    color: var(--soft-lines);
+.square-table div {
+    width: 2rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .transitivity-horizontal {
@@ -131,4 +149,20 @@ body {
             lightcoral calc(50% + 2px),
             transparent calc(50% + 2px)
         );
+}
+
+@media (width >= 80rem) {
+    #sidebar {
+        width: calc((100% - var(--width-lg))/2 - 2rem);
+        left: calc((100% - var(--width-lg))/2 + var(--width-lg) + 1rem);
+        top: calc(var(--navbar-height) + var(--block-padding-md));
+        max-height: calc(100% - var(--navbar-height) - var(--block-padding-md)*2)
+    }
+}
+
+@media (width >= 96rem) {
+    #sidebar {
+        width: calc((100% - var(--width-xl))/2 - 2rem);
+        left: calc((100% - var(--width-xl))/2 + var(--width-xl) + 1rem);
+    }
 }
