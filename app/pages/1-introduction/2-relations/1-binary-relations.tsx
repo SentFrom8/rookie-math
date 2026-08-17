@@ -1,8 +1,7 @@
 import CustomLatex from "~/components/CustomLatex";
 
 const BinaryRelations = () => {
-  return (
-    <div className="page">
+  return <div className="page">
       <h1>Binary relations</h1>
       <p>
         A relation is binary if it is a subset of the cartesian product
@@ -15,7 +14,8 @@ const BinaryRelations = () => {
         want to define or examine a binary relation on this set, we can do it
         easily using a table, like so:
       </p>
-      <table className="square-table">
+
+      <table className="square-table" style={{"--rows": 6} as React.CSSProperties}>
           <thead>
             <tr>
               <th><div><CustomLatex latex="\small A" block={false} /></div></th>
@@ -139,7 +139,7 @@ const BinaryRelations = () => {
       </p>
       <CustomLatex latex={"(a, b) \\in \\rho \\implies (b, a) \\in \\rho"} />
       <p>Here is an example of one such relation:</p>
-      <table className="square-table">
+      <table className="square-table" style={{"--rows": 6} as React.CSSProperties}>
       <thead>
          <tr>
           <th><div><CustomLatex latex="\small A" block={false} /></div></th>
@@ -224,7 +224,7 @@ const BinaryRelations = () => {
         latex={"(a, b), (b, c) \\in \\rho \\implies (a, c) \\in \\rho"}
       />
       <p>Let's try to see this in the table:</p>
-      <table className="square-table">
+      <table className="square-table" style={{"--rows": 6} as React.CSSProperties}>
       <thead>
          <tr>
           <th><div><CustomLatex latex="\small A" block={false} /></div></th>
@@ -336,7 +336,7 @@ const BinaryRelations = () => {
         is that they satisfy the properties of their respective relation type.
         In fact, let's make a partial order relation using our previous set A.
       </p>
-      <table className="square-table">
+      <table className="square-table" style={{"--rows": 6} as React.CSSProperties}>
       <thead>
          <tr>
           <th><div><CustomLatex latex="\small A" block={false} /></div></th>
@@ -405,7 +405,6 @@ const BinaryRelations = () => {
         poset.
       </p>
     </div>
-  );
 };
 
 export default BinaryRelations;

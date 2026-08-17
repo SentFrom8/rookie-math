@@ -65,6 +65,8 @@ main {
 }
 
 .page table {
+    width: 80%;
+    max-width: 26rem;
     margin-inline: auto;
     border: 1px solid var(--hard-text-dark);
     border-collapse: collapse;
@@ -77,8 +79,6 @@ main {
 .page table th, td {
     border: 1px solid var(--hard-text-dark);
     text-align: center;
-    padding-inline: 2rem;
-    padding-block: 0.5rem;
 }
 
 .page a {
@@ -118,11 +118,11 @@ main {
 }
 
 .page .square-table th, td {
-    padding: 1rem;
+    width: calc(100%/var(--rows));
 }
 
 .square-table div {
-    width: 2rem;
+    width: 100%;
     aspect-ratio: 1/1;
     display: flex;
     align-items: center;
