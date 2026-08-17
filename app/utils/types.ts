@@ -25,6 +25,6 @@ export type PageSummary = {
 
 export const SuggestionSchema = z.array(z.object({
     type: z.union([z.literal("bug"), z.literal("correction"), z.literal("comment")]),
-    email: z.email(),
+    email: z.preprocess((email: string) => email ? email : undefined, z.email().optional()),
     description: z.string()
 }))

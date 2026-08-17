@@ -4,5 +4,4 @@
 - shadow when sidebar is open + accessibility
 - feedback
 - better name
-- make email optional
 - limit animations on the sidebar

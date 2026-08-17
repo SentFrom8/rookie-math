@@ -33,5 +33,14 @@
         "type": "bug",
         "email": "sentfrom8@gmail.com",
         "description": "123"
+    },
+    {
+        "type": "bug",
+        "description": "test"
+    },
+    {
+        "type": "bug",
+        "email": "test@test.test",
+        "description": "test"
     }
 ]

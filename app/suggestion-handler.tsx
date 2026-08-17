@@ -14,7 +14,8 @@ export async function action(args: Route.ActionArgs){
         parsedSuggestions.push(formSuggestion)
         await suggestionsFile.write(JSON.stringify(parsedSuggestions, undefined, 4), 0)
         return new Response(null, {status: 200})
-    } catch {
+    } catch (e) {
+        console.log(e)
         return data({ error: true }, {status: 400})
     } finally {
         suggestionsFile.close()
