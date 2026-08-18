@@ -15,7 +15,7 @@ const Functions = () => {
         domain of the function, and B is called the codomain or the image.
       </p>
       <img
-        src="/function.svg"
+        src="/rookie-math/function.svg"
         alt="The domain and codomain of a function visualized using circles and arrows"
       />
       <p>
@@ -27,7 +27,7 @@ const Functions = () => {
         For example:
       </p>
       <img
-        src="/not_function.svg"
+        src="/rookie-math/not_function.svg"
         alt="The domain and codomain of a relation that's not a function, because an element from the domain maps to multiple elements of the codomain, and not all elements are mapped"
       />
       <p>
@@ -65,7 +65,7 @@ const Functions = () => {
         }
       />
       <img
-        src="/injection.svg"
+        src="/rookie-math/injection.svg"
         alt="An injective function where each element from A points to a different element from B"
       />
       <p>
@@ -81,7 +81,7 @@ const Functions = () => {
         latex={"(\\forall b \\in B)(\\exists a \\in A) \\space f(a) = b"}
       />
       <img
-        src="/surjection.svg"
+        src="/rookie-math/surjection.svg"
         alt="A surjective function where each element from B has at least one counterpart from A"
       />
       <p>
@@ -98,7 +98,7 @@ const Functions = () => {
         (like 'd' in earlier examples).
       </p>
       <img
-        src="/bijection.svg"
+        src="/rookie-math/bijection.svg"
         alt="A bijective function where each element from A maps to one element from B and every element of B is mapped"
       />
       <p>
@@ -109,7 +109,7 @@ const Functions = () => {
         this:
       </p>
       <img
-        src="/inverse.svg"
+        src="/rookie-math/inverse.svg"
         alt="An inverse function that maps each element of B to an element of A"
       />
       <p>
@@ -136,7 +136,7 @@ const Functions = () => {
         that image to g to get the element from C.
       </p>
       <img
-        src="/composite.svg"
+        src="/rookie-math/composite.svg"
         alt="A composite function with arrows drawn from the elements of set A to B and another set of arrows from B to C"
       />
       <p>

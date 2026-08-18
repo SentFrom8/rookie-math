@@ -6,10 +6,10 @@ const Vectors = () => {
       <p>
         In Euclidean geometry, we say that two pairs of points (A, B) and (C, D) are
         equivalent if the midpoints of AD and BC are the same:</p>
-      <img src="/vectors_equal.svg" alt="parallel lines of the same length whose diagonals intersect at both midpoints" />
+      <img src="/rookie-math/vectors_equal.svg" alt="parallel lines of the same length whose diagonals intersect at both midpoints" />
 
         <p>No matter where we move either one of these lines, AD and BC will always split one another exactly in the middle. This is not always the case:</p>
-      <img src="/vectors_different.svg" alt="non-parallel lines whose diagonals are at different spots" />
+      <img src="/rookie-math//vectors_different.svg" alt="non-parallel lines whose diagonals are at different spots" />
       <p>Here, we can never get the lines to divide one another evenly into two halves. Hence, we conclude that (A, B) is not equivalent to (B, C). It's important to note that these lines are ordered pairs of points, so (A, B) is 'pointed' towards the right, just like (C, D). If we were comparing (A, B) to (D, C), the lines (A, C) and (B, D) wouldn't intersect in the middle (they wouldn't intersect at all), and these two lines would be different.</p>
 
       <p>This kind of comparison forms an equivalence relation. It's reflexive (the
