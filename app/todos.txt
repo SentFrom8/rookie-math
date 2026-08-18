@@ -1,7 +1,0 @@
-- lint
-- collapsible categories
-- shadow when sidebar is open + accessibility
-- feedback
-- better name
-- limit animations on the sidebar
-- grammar
