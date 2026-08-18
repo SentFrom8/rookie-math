@@ -216,73 +216,17 @@ const BinaryRelations = () => {
       />
       <h3>Transitivity</h3>
       <p>
-        I find this one hardest to visualize because it doesn't quite translate
-        to our table. It states that if (a, b) in ρ, and (b, c) in ρ, then (a,
+        This one doesn't visuallize well, but it is as simple as the others. It states that if (a, b) in ρ, and (b, c) in ρ, then (a,
         c) is also in ρ:
       </p>
       <CustomLatex
         latex={"(a, b), (b, c) \\in \\rho \\implies (a, c) \\in \\rho"}
       />
-      <p>Let's try to see this in the table:</p>
-      <table className="square-table" style={{"--rows": 6} as React.CSSProperties}>
-      <thead>
-         <tr>
-          <th><div><CustomLatex latex="\small A" block={false} /></div></th>
-          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
-          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
-          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
-          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
-          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
-        </tr>
-      </thead>
+      <p>This is best shown with an example. If 3 &lt; 5 and 5 &lt; 7, 3 has to be less than 7 if the relation is transitive. Another example is divisibility:</p>
+      <CustomLatex latex="(a, b) \in \rho \implies a|b" />
+      <p><CustomLatex latex="a" block={false} /> divides <CustomLatex latex="b" block={false} /> if <CustomLatex latex="a" block={false} /> can be multiplied by some number to get <CustomLatex latex="b" block={false} />. 4 can be multiplied by 3 to get 12. Let's label the number we used to multiply <CustomLatex latex="a" block={false} /> as <CustomLatex latex="x" block={false} /> <CustomLatex latex="(a \times x = b)" block={false} />. If <CustomLatex latex="b" block={false} /> divides another number <CustomLatex latex="c" block={false} />, that means there is a <CustomLatex latex="y" block={false} /> such that <CustomLatex latex="b \times y = c" block={false} />. Now we can just substitute <CustomLatex latex="b" block={false} /> for <CustomLatex latex="a \times x" block={false} /> to get <CustomLatex latex="a \times x \times y = c" block={false} />. We've just proved that if <CustomLatex latex="a" block={false} /> divides <CustomLatex latex="b" block={false} /> and <CustomLatex latex="b" block={false} /> divides <CustomLatex latex="c" block={false} />, there will always be a number <CustomLatex latex="x \times y" block={false} /> that can multiply <CustomLatex latex="a" block={false} /> to get <CustomLatex latex="c" block={false} />.</p>
 
-      <tbody>
-         <tr>
-          <th><div><CustomLatex latex="\small a" block={false} /></div></th>
-          <td className="transitivity-vertical"><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-        </tr>
-        <tr className="transitivity-horizontal">
-          <th><div><CustomLatex latex="\small b" block={false} /></div></th>
-          <td className="transitivity-vertical"><div><CustomLatex latex="\small 1" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 1" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-        </tr>
-        <tr>
-          <th><div><CustomLatex latex="\small c" block={false} /></div></th>
-          <td className="transitivity-vertical"><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-        </tr>
-        <tr>
-          <th><div><CustomLatex latex="\small d" block={false} /></div></th>
-          <td className="transitivity-vertical"><div><CustomLatex latex="\small 1" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-        </tr>
-        <tr>
-          <th><div><CustomLatex latex="\small e" block={false} /></div></th>
-          <td className="transitivity-vertical"><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-          <td><div><CustomLatex latex="\small 0" block={false} /></div></td>
-        </tr>
- 
-      </tbody>
-      </table>
-      <p>
-        The relation <CustomLatex latex="\small \{(b, d), (d, a), (b, a)\}" block={false} />
-      </p>
+      <p>Here is what this looks like: <CustomLatex latex="\small 11" block={false} /> divides <CustomLatex latex="\small 77" block={false} /> <CustomLatex latex="\small (77 = 7 \times 11)" block={false} />. <CustomLatex latex="\small 77" block={false} /> divides <CustomLatex latex="\small 231" block={false} /> <CustomLatex latex="\small (231 = 3 \times 77)" block={false} />. We can take the original <CustomLatex latex="\small 11" block={false} />, multiply by <CustomLatex latex="\small 7" block={false} /> to get <CustomLatex latex="\small 77" block={false} /> and multiply again by <CustomLatex latex="\small 3" block={false} /> to get <CustomLatex latex="\small 231" block={false} /> <CustomLatex latex="\small (231 = (7 \times 3) \times 11 = 21 \times 11)" block={false} />.</p>
       <h2>Important relations</h2>
       <h3>Equivalence relations</h3>
       <p>
