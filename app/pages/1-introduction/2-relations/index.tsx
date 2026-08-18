@@ -11,15 +11,15 @@ const Relations = () => {
       </p>
       <CustomLatex latex={"(a, b) := \\{\\{a\\}, \\{a, b\\}\\}"} />
       <p>
-        Obviously, a set is unordered. We can't specify which element goes
+        A set is unordered. We can't specify which element goes
         first. So we define a structure like this, and we make a rule that the
         element that appears alone goes first. Keep in mind that this set can
         appear in any order:
       </p>
       <CustomLatex latex={"(a, b) := \\{\\{b, a\\}, \\{a\\}\\}"} />
       <p>
-        These two are identical, because again the order the set elements appear
-        in does not matter, what matters is which one is alone. To be more
+        These two are identical, because, again, the order the set elements appear
+        in does not matter. What matters is which one is alone. To be more
         specific, the first element is the one that appears in both sets. This
         also allows us to say <CustomLatex latex="\small (a, b) = (c, d)" block={false} />, and since an ordered pair is a
         set, they are only equal when they have the same elements. We can also
@@ -87,7 +87,7 @@ const Relations = () => {
       />
       <p>
         Finally, we can explain what relations are. They are just subsets of the
-        cartesian product of some sets following some rule. This, of course,
+        Cartesian product of some sets following some rule. This, of course,
         means they are sets themselves. One relation would be&nbsp;
         <CustomLatex latex="\small \{(1, a), (2, b), (3, c)\}" block={false} />.
         That's pretty much all relations are, and now we can discuss special

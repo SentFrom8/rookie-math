@@ -8,7 +8,7 @@ const SetAxioms = () => {
         <li>Axiom of extensionality</li>
           <p>
             Two sets are equal if they contain the same elements. This one is
-            self explanatory, but formally we'd write it as:
+            self-explanatory, but formally we'd write it as:
           </p>
           <CustomLatex latex="\forall x \forall y [ \forall z (z \in x \iff z \in y) \implies x = y]" />
           <p>
@@ -22,7 +22,7 @@ const SetAxioms = () => {
           </p>
         <li>Axiom of empty set</li>
           <p>
-            There exists an empty set. This one is also self explanatory, and
+            There exists an empty set. This one is also self-explanatory, and
             formally we'd write it down as:
           </p>
           <CustomLatex latex={"\\exists A \\forall x (x \\notin A)"} />
@@ -40,9 +40,9 @@ const SetAxioms = () => {
             latex={"\\forall x \\forall y \\exists z ((x \\in z)(y \\in z))"}
           />
           <p>
-            So far we knew that there exists an empty set, and that it is unique
+            So far we knew that there exists an empty set and that it is unique
             (because of the axiom of extensionality, two empty sets have the
-            same elements so they are equal) so we only had 1 set. Now, we can
+            same elements making them equal), so we only had 1 set. Now, we can
             pair it, which allows us to do something like&nbsp;
             <CustomLatex latex={"\\small \\{\\emptyset, \\emptyset\\}"} block={false} />
             . We can see that this set and the set&nbsp;
@@ -73,7 +73,7 @@ const SetAxioms = () => {
             This one is confusing, so let's break it down. Simply, it says that
             for any set X there is a set Y that contains all the elements of the
             elements of X. Let's go through it statement by statement, starting
-            from the back. u is a member of z and z is a member of X:&nbsp;
+            from the back. u is a member of z, and z is a member of X:&nbsp;
             <CustomLatex
               latex={"\\small X = \\{z = \\{ u \\dots \\}, \\dots \\}"}
               block={false}
@@ -90,7 +90,7 @@ const SetAxioms = () => {
             other words, it's a union of a and b.
           </p>
         
-        <li>Axiom of power set</li>
+        <li>Axiom of the power set</li>
           <p>
             Given any set x, there is a set y such that, given any set z, this
             set z is a member of y iff every element of z is also an element of
@@ -104,7 +104,7 @@ const SetAxioms = () => {
           <p>
             A bit of translation is in order. We have a set x. This part should
             be clear. We also have a set y that consists of all sets whose every
-            element is in x. This set y is known as the power set and we denote
+            element is in x. This set y is known as the power set, and we denote
             it with:&nbsp;
             <CustomLatex latex={"\\small \\mathcal{P}(x)"} block={false} />. Again, an
             example is the best showcase.
@@ -126,7 +126,7 @@ const SetAxioms = () => {
             latex={"B = \\{x \\in A \\space | \\space \\varphi(x)\\}"}
           />
           <p>
-            Here, φ is a formula, which in layman terms is a condition that is
+            Here, φ is a formula, which in layman's terms is a condition that is
             applied to all elements of A, and ones that satisfy the condition
             are included in B. For example, say we have a set A and a set B.
           </p>
@@ -144,9 +144,9 @@ const SetAxioms = () => {
           </p>
       </ol>
       <p>
-        It's important to note that these are only some of the set axioms which
+        It's important to note that these are only some of the set axioms that
         were covered as an introduction to the subject and to give a foundation
-        for the set operations. The standard set theory (ZFC - Zermelo-Fraenkal
+        for the set operations. The standard set theory (ZFC - Zermelo-Fraenkel
         theory with the axiom of choice) might be covered in more detail in one
         of the later chapters. As to how this solves our previous paradox, it's
         simple. The set&nbsp;

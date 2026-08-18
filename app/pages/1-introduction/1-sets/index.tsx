@@ -7,8 +7,8 @@ const Sets = () => {
           <p>
             Sets are just collections of unique values. They can contain any number
             of elements from zero to infinity. They can't have a negative number of
-            elements as far as I know (I also asked my professor who was in no mood
-            to entertain such hypotheticals. This question brought be a bit of
+            elements as far as I know (I also asked my professor, who was in no mood
+            to entertain such hypotheticals. This question brought me a bit of
             ridicule from some of my peers). An empty set is denoted with:&nbsp;
             <CustomLatex latex="\small \emptyset" block={false} />
           </p>
@@ -23,9 +23,9 @@ const Sets = () => {
           <p>Let's take a look at a simple set definition:</p>
           <CustomLatex latex="A = \{x \in \N \space | \space 1 < x \leq 10 \}" />
           <p>
-            This simply tells us that A is a set containing elements (x) from the
+            This simply tells us that A is a set containing elements (x represents an arbitrary element) from (<CustomLatex latex="\in" block={false} />) the
             set of natural numbers (<CustomLatex latex={"\\N"} block={false} />)
-            where (|) each element is between 1 exclusive and 19 inclusive. We could
+            where (|) each element is between 1 exclusive and 10 inclusive. We could
             have also listed each element, like so:
           </p>
           <CustomLatex latex="A = \{ 2,3,4,5,6,7,8,9,10 \}" />
@@ -68,16 +68,16 @@ It's a set that contains itself, which means it is a set that contains a
                         <CustomLatex
               latex={"A = \\{ A \\} = \\{\\{A\\}\\} = \\{\\{\\{A\\}\\}\\} = \\dots"}
             />
-            <p>
-            Anyway, let's get back to our set S. S contains all sets that are not
+          <p>
+            Let's get back to our set S. S contains all sets that are not
             like A. But S itself is not like A, so it has to contain itself? But if
             it does contain itself, then it is like A, and therefore can't contain
-            itself? This problem is known as the Russel paradox, and to solve it we
+            itself? This problem is known as the Russell paradox, and to solve it we
             need to introduce a formal definition of sets.
           </p>
           <h2>Set definition</h2>
           <p>
-            What we had until now is the, so called, "naive set theory." We showed
+            What we had until now is the, so-called, "naive set theory." We showed
             its flaws, and to eliminate them we need to introduce the&nbsp;
             <Link to={"/pages/1-introduction/1-sets/1-set-axioms"}>set axioms</Link>, which will
             transition us into the axiomatic set theory, and maybe later we'll cover

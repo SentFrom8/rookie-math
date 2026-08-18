@@ -8,7 +8,7 @@ const BinaryRelations = () => {
         of a set by itself.&nbsp;
         <CustomLatex latex={"\\small A^2 = A \\times A"} block={false} />. If a and b
         are both elements of A and they are related to each other (the relation
-        contains the element (a, b)) we can write that as a ρ b. Let's take the
+        contains the element (a, b)), we can write that as a ρ b. Let's take the
         set&nbsp;
         <CustomLatex latex={"\\small A = \\{a, b, c, d, e\\}"} block={false} />. If we
         want to define or examine a binary relation on this set, we can do it
@@ -72,7 +72,7 @@ const BinaryRelations = () => {
       </table>
       <p>
         The table represents each combination of 2 elements from A. 1 means that
-        that combination appears in the relation, 0 means that it does not. So
+        that combination appears in the relation, and 0 means that it does not. So
         the relation described in this table would look like:
       </p>
       <CustomLatex
@@ -80,18 +80,17 @@ const BinaryRelations = () => {
       />
       <p>
         Each element of <CustomLatex latex="A \times A" block={false} /> corresponds to either a 1 or a 0. In other words,
-        there is a mapping of each element from A×A to an element from a set
-        that contains 1 and 0. This is actually a function, and it's knows as
+        there is a mapping of each element from A×A to the set <CustomLatex latex="\small \{0, 1\}" block={false} />. This is actually a function, and it's known as
         the characteristic function&nbsp;
         <CustomLatex
           latex={"\\small f_\{\\rho\} : A \\times A \\to \\{0, 1\\}"}
           block={false}
         />
-        . We can pass any element of A×A to this function and it will return 1
+        . We can pass any element of A×A to this function, and it will return 1
         if it's inside the relation, so&nbsp;
         <CustomLatex latex={"\\small f_\{\\rho\}((d, d)) = 1"} block={false} />. The
         table above also allows us to see the matrix property of a binary
-        relation and we can clearly see why the collection of pairs with the
+        relation, and we can clearly see why the collection of pairs with the
         same elements is known as the diagonal.
       </p>
       <h2>Properties</h2>
@@ -196,11 +195,11 @@ const BinaryRelations = () => {
       </tbody>
       </table>
       <p>
-        We can clearly see why it's called symmetry, if we were to fold this
+        We can clearly see why it's called symmetry. If we were to fold this
         over the diagonal, the ones and zeroes would perfectly match. An element
         of the diagonal, if included, is symmetric by default (because the
         element on the opposite side of the diagonal is itself, which is
-        included) so the diagonal has no impact on symmetry.
+        included), so the diagonal has no impact on symmetry.
       </p>
       <h3>Antisymmetry</h3>
       <p>
@@ -216,7 +215,7 @@ const BinaryRelations = () => {
       />
       <h3>Transitivity</h3>
       <p>
-        This one doesn't visuallize well, but it is as simple as the others. It states that if (a, b) in ρ, and (b, c) in ρ, then (a,
+        This one doesn't visualize well, but it is as simple as the others. It states that if (a, b) in ρ and (b, c) in ρ, then (a,
         c) is also in ρ:
       </p>
       <CustomLatex
@@ -226,26 +225,26 @@ const BinaryRelations = () => {
       <CustomLatex latex="(a, b) \in \rho \implies a|b" />
       <p><CustomLatex latex="a" block={false} /> divides <CustomLatex latex="b" block={false} /> if <CustomLatex latex="a" block={false} /> can be multiplied by some number to get <CustomLatex latex="b" block={false} />. 4 can be multiplied by 3 to get 12. Let's label the number we used to multiply <CustomLatex latex="a" block={false} /> as <CustomLatex latex="x" block={false} /> <CustomLatex latex="(a \times x = b)" block={false} />. If <CustomLatex latex="b" block={false} /> divides another number <CustomLatex latex="c" block={false} />, that means there is a <CustomLatex latex="y" block={false} /> such that <CustomLatex latex="b \times y = c" block={false} />. Now we can just substitute <CustomLatex latex="b" block={false} /> for <CustomLatex latex="a \times x" block={false} /> to get <CustomLatex latex="a \times x \times y = c" block={false} />. We've just proved that if <CustomLatex latex="a" block={false} /> divides <CustomLatex latex="b" block={false} /> and <CustomLatex latex="b" block={false} /> divides <CustomLatex latex="c" block={false} />, there will always be a number <CustomLatex latex="x \times y" block={false} /> that can multiply <CustomLatex latex="a" block={false} /> to get <CustomLatex latex="c" block={false} />.</p>
 
-      <p>Here is what this looks like: <CustomLatex latex="\small 11" block={false} /> divides <CustomLatex latex="\small 77" block={false} /> <CustomLatex latex="\small (77 = 7 \times 11)" block={false} />. <CustomLatex latex="\small 77" block={false} /> divides <CustomLatex latex="\small 231" block={false} /> <CustomLatex latex="\small (231 = 3 \times 77)" block={false} />. We can take the original <CustomLatex latex="\small 11" block={false} />, multiply by <CustomLatex latex="\small 7" block={false} /> to get <CustomLatex latex="\small 77" block={false} /> and multiply again by <CustomLatex latex="\small 3" block={false} /> to get <CustomLatex latex="\small 231" block={false} /> <CustomLatex latex="\small (231 = (7 \times 3) \times 11 = 21 \times 11)" block={false} />.</p>
+      <p>Here is what this looks like: <CustomLatex latex="\small 11" block={false} /> divides <CustomLatex latex="\small 77" block={false} /> <CustomLatex latex="\small (77 = 7 \times 11)" block={false} />. <CustomLatex latex="\small 77" block={false} /> divides <CustomLatex latex="\small 231" block={false} /> <CustomLatex latex="\small (231 = 3 \times 77)" block={false} />. We can take the original <CustomLatex latex="\small 11" block={false} />, multiply by <CustomLatex latex="\small 7" block={false} /> to get <CustomLatex latex="\small 77" block={false} />, and multiply again by <CustomLatex latex="\small 3" block={false} /> to get <CustomLatex latex="\small 231" block={false} /> <CustomLatex latex="\small (231 = (7 \times 3) \times 11 = 21 \times 11)" block={false} />.</p>
       <h2>Important relations</h2>
       <h3>Equivalence relations</h3>
       <p>
-        These relations are reflexive, symmetric and transitive. This is
+        These relations are reflexive, symmetric, and transitive. This is
         basically a relation that contains pairs of elements considered equal.
-        Reflexivity is self explanatory here because an element and that same
+        Reflexivity is obvious here because an element and that same
         element are, in fact, the same. It has to be symmetric because if a = b,
-        then they are the same so b = a must also be true. It's transitive
-        because a = b = c means these are all the same so a = c has to be true.
-        Of curse, when I say they are the same I mean they are considered equal.
+        then they are the same, so b = a must also be true. It's transitive
+        because a = b = c means these are all the same, so a = c has to be true.
+        When I say they are the same, I mean they are considered equal under the relation.
       </p>
       <p>
         An equivalence relation breaks up the set into classes. These classes
         are just sets where the elements are considered equal under the
         relation. So if we had a relation where two elements are related if they
-        have the same reminder when divided by three, this relation would break
-        the set up into 3 classes. One for element that have a remainder of 0,
-        one for the elements that have a remainder of 1 and one for elements
-        that have a remainder 2. We'd write this relation as:
+        have the same remainder when divided by three, this relation would break
+        up the set into 3 classes. One for elements that have a remainder of 0,
+        one for the elements that have a remainder of 1, and one for elements
+        that have a remainder of 2. We'd write this relation as:
       </p>
       <CustomLatex
         latex={
@@ -267,18 +266,15 @@ const BinaryRelations = () => {
       </p>
       <h2>Partial order relations</h2>
       <p>
-        Are relations that are reflexive, transitive and antisymmetric. We can
+        Are relations that are reflexive, transitive, and antisymmetric. We can
         think of them as relations where elements can be ordered in some way but
         also equal. One example is the classic less than or equal relation (≤).
         The equality here requires reflexivity. They are antisymmetric because
-        they define some kind of order, so if a is before b (a, b) then b can't
+        they define some kind of order, so if a is before b (a, b), then b can't
         be before a (b, a). They are transitive because if a before b and b
         before c, a obviously has to be before c. I use the word 'before'
-        because these relations don't require any sort of rule or logic. I could
-        have a partial order where 5 ≤ 3. I could also have an equivalence
-        relation where 5 = 3. The only thing that matters for these to be valid
-        is that they satisfy the properties of their respective relation type.
-        In fact, let's make a partial order relation using our previous set A.
+        because it's an easy way to remember what these relations represent
+        and what properties they must have.
       </p>
       <table className="square-table" style={{"--rows": 6} as React.CSSProperties}>
       <thead>
@@ -340,13 +336,13 @@ const BinaryRelations = () => {
       <p>Our relation looks like this:</p>
       <CustomLatex latex="\rho = \{(a, a), (b, b), (b, c), \\ (c, c), (d, b), (d, c), (d, d), \\ (e, b), (e, c), (e, e)\}" />
       <p>
-        As we can see, I'm not following any rule or using any logic to define
-        this, I just picked random values and made sure the properties are
-        satisfied. There are elements which are not related which we label as
-        incomparable. For example, there is no order defined between the element
-        a and c. If all elements are comparable this is called a total order.
-        The ordered pair containing the set and the relation (A, ρ) is called a
-        poset.
+        As we can see, I'm not following any rule or logic to define
+        this. I just picked random values and made sure reflexivity, antisymmetry,
+        and transitivity are satisfied. There are elements that are not related,
+        and we call them incomparable. For example, there is no order defined
+        between the elements a and c. If all elements are comparable, this is called
+        a total order. The ordered pair containing the set and the relation (A, ρ)
+        is called a poset.
       </p>
     </div>
 };
